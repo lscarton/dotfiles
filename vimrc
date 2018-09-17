@@ -4,14 +4,15 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation fetches from;
 " https://github.com/davidhalter/jedi-vim
 Plug 'davidhalter/jedi-vim'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'lervag/vimtex'
-Plug 'taketwo/vim-ros'
+" Plug 'taketwo/vim-ros'
+" Plug 'vim-latex/vim-latex'
 " Initialize plugin system
 call plug#end()
 " Call color scheme
@@ -24,6 +25,11 @@ cmap W w
 cmap Q q
 nnoremap <Up> kzz
 nnoremap <Down> jzz
+"filetype plugin indent on
+
+" source $VIMRUNTIME/vimrc_example.vim
+" source $VIMRUNTIME/mswin.vim
+" behave mswin
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -31,6 +37,7 @@ endif
 " Run current python3 script with F9
 " nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
 " nnoremap <buffer> <F9> :exec '!ipython -i' shellescape(@%, 1)<cr>
+" Run current script in python with F5
 nnoremap <F5> :! python %<cr>
 
 " Set spell check"
@@ -45,7 +52,7 @@ set clipboard=unnamed
 
 " Copy in the clipboard
 vnoremap <C-c> "+y
-" noremap <C-v> "+p
+vnoremap <C-v> "+p
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -57,17 +64,22 @@ vnoremap <silent> @ :s/^#//<cr>:noh<cr>
 " Enable syntax highlighting
 syntax enable
 
+" disable wrapping the lines
+set nowrap
 " folding setting
 set foldmethod=indent   
 set foldnestmax=10
-" set nofoldenable
-set foldlevel=2
+"set nofoldenable
+set foldlevel=10
 
 " Show line numbers
 set number
 
 " Set tabs width to 4, it is still \t
 set tabstop=4
+" Set shiftwidth to 0 which makes it equal to tabwidth by default. This is
+" needed to use proper indentation
+set shiftwidth=0
 
 " Expand tabs into spaces
 set expandtab
@@ -78,8 +90,11 @@ set autoindent
 " Show the matching part of the pair for [] {} and ()
 set showmatch
 
+" setting smart indentation
+set smartindent
+
 " Enable all Python syntax highlighting features
-let python_highlight_all = 1
+"let python_highlight_all = 1
 
 " Mouse click
 " set mouse=a
@@ -156,13 +171,6 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "2"
 let g:jedi#show_call_signatures_delay = 1
 
-let g:jedi#completions_enabled = 1
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "2"
-let g:jedi#show_call_signatures_delay = 0
 
 " Syntastic configuration
 let g:syntastic_check_on_open = 1

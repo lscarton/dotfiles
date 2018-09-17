@@ -117,3 +117,27 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# added by Anaconda3 installer
+#export PATH="/home/dharmin/anaconda3/bin:$PATH"
+. /home/dharmin/anaconda3/etc/profile.d/conda.sh
+
+# ROS stuff 
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+export ROBOT_ENV=brsu-c025-sim
+export ROBOT=youbot-brsu-2
+
+export NXJ_HOME=/opt/leJOS_NXJ_0.9.1beta-3
+export LEJOS_NXT_JAA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=/opt/leJOS_NXJ_0.9.1beta-3:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# vi command compatible
+set -o vi
+export RANGER_LOAD_DEFAULT_RC=FALSE
+VISUAL=editor; export VISUAL EDITOR=editor; export EDITOR
+# neofetch on start
+neofetch --source ~/.config/neofetch/batman3
