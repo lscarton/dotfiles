@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/dharmin/.vim/plugged/lightline.vim'
-let g:netrw_dirhist_2='/etc/NetworkManager/conf.d'
-let g:netrw_dirhist_3='/home/dharmin/study/sem2/manipulation/assignments/RM_project/proposal'
-let g:netrw_dirhist_4='/home/dharmin/study/sem2/r&d/.gitignore'
-let g:netrw_dirhist_5='/home/dharmin/catkin_ws/src/sdp_ss2018_g1/SFDD_standalone'
-let g:netrw_dirhist_6='/home/dharmin/catkin_ws/src/sdp_ss2018_g1/ros/scripts'
-let g:netrw_dirhist_7='/home/dharmin/catkin_ws/src/youbot_description/urdf/youbot_arm'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/dharmin/catkin_ws/src/mas_industrial_robotics/mir_navigation/mir_2dnav/ros/launch'

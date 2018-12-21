@@ -11,6 +11,7 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'lervag/vimtex'
+Plug 'itchyny/vim-gitbranch'
 " Plug 'taketwo/vim-ros'
 " Plug 'vim-latex/vim-latex'
 " Initialize plugin system
@@ -21,11 +22,32 @@ color new_theme
 " let g:molokai_original
 
 " my mappings
-cmap W w
-cmap Q q
-nnoremap <Up> kzz
-nnoremap <Down> jzz
+:command! W w
+:command! Q q
+:command! WQ wq
+:command! Wq wq
+:command! YCMoff let g:ycm_auto_trigger=0
+:command! ST SyntasticToggleMode
+:command! Label VimtexLabelsOpen
+
+" mapping Tab and Shift+Tab to move among tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+
+" disable scroll using mouse
+set mouse=a
+nmap <ScrollWheelUp> <nop>
+nmap <ScrollWheelDown> <nop>
+imap <ScrollWheelUp> <nop>
+imap <ScrollWheelDown> <nop>
+vmap <ScrollWheelUp> <nop>
+vmap <ScrollWheelDown> <nop>
+
+" setting to keep cursor line in middle
+set scrolloff=9
+
 "filetype plugin indent on
+filetype plugin on
 
 " source $VIMRUNTIME/vimrc_example.vim
 " source $VIMRUNTIME/mswin.vim
@@ -58,11 +80,33 @@ vnoremap <C-v> "+p
 autocmd! bufwritepost .vimrc source %
 
 " Comment lines or blocks
-vnoremap <silent> # :s/^/#/<cr>:noh<cr>
-vnoremap <silent> @ :s/^#//<cr>:noh<cr>
+" vnoremap <silent> # :s/^/#/<cr>:noh<cr>
+" vnoremap <silent> @ :s/^#//<cr>:noh<cr>
+" vnoremap <silent> / :s/^/\/\//<cr>:noh<cr>
+" vnoremap <silent> * :s/^\/\///<cr>:noh<cr>
+" Commenting blocks of code.
+autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+noremap <silent> <leader>]] :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> <leader>[[ :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " Enable syntax highlighting
 syntax enable
+
+" make hidden characters like tabs or EOL visible
+set listchars=nbsp:_,trail:.,tab:▸\ ,eol:¬
+" set list
+
+
+" enter the current millenium
+set nocompatible
+
+" wildmenu for fuzzy file finding
+set wildmenu
 
 " disable wrapping the lines
 set nowrap
@@ -74,6 +118,9 @@ set foldlevel=10
 
 " Show line numbers
 set number
+
+" relative line numbering
+set rnu
 
 " Set tabs width to 4, it is still \t
 set tabstop=4
@@ -132,11 +179,15 @@ set timeoutlen=1000 ttimeoutlen=0
        \ 'colorscheme': 'powerline',
        \ 'active': {
        \   'left': [ [ 'mode', 'paste' ],
-       \             [ 'readonly', 'filename', 'modified' ] ],
+       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
        \   'right': [ [ 'lineinfo' ],
        \              [ 'percent' ],
        \              [ 'filetype' ] ]
-       \ }}
+       \ },
+       \ 'component_function': {
+       \   'gitbranch': 'gitbranch#name'
+       \ },
+       \ }
 
 " Minimal configuration for jedi-vim
 let g:jedi#show_call_signatures = "2"
@@ -149,6 +200,8 @@ let g:jedi#show_call_signatures = "2"
 "let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/UltiSnips"
+let g:UltiSnipsEditSplit="tabdo"
 
 " Take out function preview from YCM
 set completeopt-=preview
@@ -167,7 +220,7 @@ let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 1
 let g:jedi#smart_auto_mappings = 1
 let g:jedi#popup_on_dot = 1
-let g:jedi#completions_command = ""
+let g:jedi#completions_command = "<C-N>"
 let g:jedi#show_call_signatures = "2"
 let g:jedi#show_call_signatures_delay = 1
 
@@ -190,5 +243,17 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+
+
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
+
+" opens pdf file using zathura
+let g:vimtex_view_method = 'zathura'
+
+" netrw file browsing
+let g:netrw_banner=0 " hide banner
+let g:netrw_browse_split=4 "open in prior window
+let g:netrw_altv=1          "open splits to the right
+let g:netrw_liststyle=3     "tree view
+

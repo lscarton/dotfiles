@@ -27,7 +27,7 @@ let g:colors_name = "new_theme"
 " highlight Type						gui=NONE
 
 " Console
-highlight Normal     ctermfg=252	ctermbg=234
+highlight Normal     ctermfg=252	ctermbg=NONE
 highlight Search     ctermfg=Red	ctermbg=NONE cterm=bold
 highlight Visual					cterm=reverse
 highlight Cursor     ctermfg=Black	ctermbg=Green	cterm=bold
@@ -36,8 +36,9 @@ highlight Comment    ctermfg=DarkGrey
 highlight StatusLine ctermfg=blue	ctermbg=white
 highlight Statement  ctermfg=Yellow			cterm=NONE
 highlight Type		ctermfg=LightGreen		cterm=NONE
-highlight Cursorline ctermbg=235 term=bold cterm=bold 
+highlight Cursorline ctermbg=237 term=bold cterm=bold 
 highlight CursorLineNR ctermbg=NONE term=bold cterm=bold
+highlight LineNR ctermbg=236 cterm=NONE
 highlight String ctermfg=LightBlue 
 highlight Number ctermfg=DarkMagenta
 highlight Float ctermfg=DarkMagenta

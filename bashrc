@@ -46,6 +46,7 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -57,9 +58,15 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# get the name of current branch
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# git branch | grep '\*' | awk '{print ($2)}'
+}
+
 triangle=$'\uE0B0'
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[1;44m\]\W \[\033[0;34m\]$triangle\[\e[0m\] '
+    PS1="\[\033[1;44m\]\W\[\033[0;44;33m\]\$(parse_git_branch) \[\033[0;34m\]$triangle\[\e[0m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -125,19 +132,30 @@ fi
 # ROS stuff 
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-export ROBOT_ENV=brsu-c025-sim
-export ROBOT=youbot-brsu-2
+# source ~/work/osm/catkin_workspace/devel/setup.bash
+# source ~/study/sem3/catkin_ws/devel/setup.bash
+# export ROBOT_ENV=brsu-c025-sim
+export ROBOT_ENV=single-room
+export ROBOT=youbot-brsu-1
 
+# lejos path (lego brick)
 export NXJ_HOME=/opt/leJOS_NXJ_0.9.1beta-3
 export LEJOS_NXT_JAA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=/opt/leJOS_NXJ_0.9.1beta-3:$PATH
+
+# ruby path
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-# vi command compatible
+# gradle (multi agent)
+export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+
+ #vi command compatible
 set -o vi
 export RANGER_LOAD_DEFAULT_RC=FALSE
-VISUAL=editor; export VISUAL EDITOR=editor; export EDITOR
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3
+
+export TERMCMD="gnome-terminal --" 
