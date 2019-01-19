@@ -11,15 +11,19 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
 Plug 'lervag/vimtex'
-Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'dylanaraps/wal.vim'
+
 " Plug 'taketwo/vim-ros'
 " Plug 'vim-latex/vim-latex'
 " Initialize plugin system
 call plug#end()
 " Call color scheme
 " colo molokai
+" let g:molokai_original=0
 color new_theme
-" let g:molokai_original
+" colorscheme wal
 
 " my mappings
 :command! W w
@@ -29,6 +33,7 @@ color new_theme
 :command! YCMoff let g:ycm_auto_trigger=0
 :command! ST SyntasticToggleMode
 :command! Label VimtexLabelsOpen
+:command! Png normal $<C-v>G$hA.png<esc>
 
 " mapping Tab and Shift+Tab to move among tabs
 nnoremap <Tab> gt
@@ -44,27 +49,20 @@ vmap <ScrollWheelUp> <nop>
 vmap <ScrollWheelDown> <nop>
 
 " setting to keep cursor line in middle
-set scrolloff=9
+set scrolloff=5
 
 "filetype plugin indent on
 filetype plugin on
 
-" source $VIMRUNTIME/vimrc_example.vim
-" source $VIMRUNTIME/mswin.vim
-" behave mswin
-
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-" Run current python3 script with F9
-" nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
-" nnoremap <buffer> <F9> :exec '!ipython -i' shellescape(@%, 1)<cr>
+
 " Run current script in python with F5
 nnoremap <F5> :! python %<cr>
 
 " Set spell check"
 " set spell spelllang=en_us
-"set spell spelllang=es
 
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before
@@ -80,19 +78,7 @@ vnoremap <C-v> "+p
 autocmd! bufwritepost .vimrc source %
 
 " Comment lines or blocks
-" vnoremap <silent> # :s/^/#/<cr>:noh<cr>
-" vnoremap <silent> @ :s/^#//<cr>:noh<cr>
-" vnoremap <silent> / :s/^/\/\//<cr>:noh<cr>
-" vnoremap <silent> * :s/^\/\///<cr>:noh<cr>
-" Commenting blocks of code.
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-autocmd FileType conf,fstab       let b:comment_leader = '# '
-autocmd FileType tex              let b:comment_leader = '% '
-autocmd FileType mail             let b:comment_leader = '> '
-autocmd FileType vim              let b:comment_leader = '" '
-noremap <silent> <leader>]] :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> <leader>[[ :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <leader>] :Commentary<cr>
 
 " Enable syntax highlighting
 syntax enable
@@ -101,6 +87,8 @@ syntax enable
 set listchars=nbsp:_,trail:.,tab:▸\ ,eol:¬
 " set list
 
+" disable auto-commenting when entering new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " enter the current millenium
 set nocompatible
@@ -110,8 +98,13 @@ set wildmenu
 
 " disable wrapping the lines
 set nowrap
-" folding setting
+
+set foldmethod=indent  " Default fold method
+" set the method for folding depending on language
+autocmd FileType c,cpp,java,scala set foldmethod=syntax
+autocmd FileType sh,ruby,python   set foldmethod=indent
 set foldmethod=indent   
+" level of nesting to fold
 set foldnestmax=10
 "set nofoldenable
 set foldlevel=10
@@ -147,7 +140,7 @@ set smartindent
 " set mouse=a
 
 " Show a visual line under the cursor's current line
-set cursorline
+" set cursorline
 
 " Easier indentation of code blocks
 " In visual mode (v), select several lines of code press ``>`` several times.
@@ -185,7 +178,7 @@ set timeoutlen=1000 ttimeoutlen=0
        \              [ 'filetype' ] ]
        \ },
        \ 'component_function': {
-       \   'gitbranch': 'gitbranch#name'
+       \   'gitbranch': 'fugitive#head'
        \ },
        \ }
 
@@ -256,4 +249,8 @@ let g:netrw_banner=0 " hide banner
 let g:netrw_browse_split=4 "open in prior window
 let g:netrw_altv=1          "open splits to the right
 let g:netrw_liststyle=3     "tree view
+
+" set color column
+hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+set colorcolumn=100
 

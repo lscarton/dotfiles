@@ -35,7 +35,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-TERM=xterm-256color
+# TERM=xterm-256color
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -125,6 +125,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Import colorscheme from 'wal' asynchronously
+cat ~/.cache/wal/sequences; clear
+
 # added by Anaconda3 installer
 #export PATH="/home/dharmin/anaconda3/bin:$PATH"
 . /home/dharmin/anaconda3/etc/profile.d/conda.sh
@@ -132,11 +135,16 @@ fi
 # ROS stuff 
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+# source ~/omg-tools/examples/ros_example/devel/setup.bash
 # source ~/work/osm/catkin_workspace/devel/setup.bash
 # source ~/study/sem3/catkin_ws/devel/setup.bash
-# export ROBOT_ENV=brsu-c025-sim
-export ROBOT_ENV=single-room
+export ROBOT_ENV=brsu-c025-sim
+# export ROBOT_ENV=single-room
+# export ROBOT_ENV=double-room
 export ROBOT=youbot-brsu-1
+
+# using hsl solver for spline based motion planner
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/dharmin/omg-tools/coinhsl-linux-x86_64/lib
 
 # lejos path (lego brick)
 export NXJ_HOME=/opt/leJOS_NXJ_0.9.1beta-3
@@ -153,9 +161,8 @@ export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
 
  #vi command compatible
 set -o vi
+
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3
-
-export TERMCMD="gnome-terminal --" 
