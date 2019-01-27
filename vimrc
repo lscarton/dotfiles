@@ -14,16 +14,13 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'dylanaraps/wal.vim'
-
-" Plug 'taketwo/vim-ros'
-" Plug 'vim-latex/vim-latex'
-" Initialize plugin system
 call plug#end()
+
 " Call color scheme
 " colo molokai
 " let g:molokai_original=0
-color new_theme
-" colorscheme wal
+" color new_theme
+colorscheme wal
 
 " my mappings
 :command! W w
@@ -76,6 +73,9 @@ vnoremap <C-v> "+p
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+
+" Automatic recompiling of st config.h
+autocmd bufwritepost ~/st-0.8.1/config.h !sudo make install
 
 " Comment lines or blocks
 noremap <leader>] :Commentary<cr>
