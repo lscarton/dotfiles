@@ -31,7 +31,7 @@ font pango:DejaVu Sans Mono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /usr/local/bin/st
+bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec /usr/local/bin/st
 
 # kill focused window
@@ -113,8 +113,8 @@ bindsym $mod+0 workspace 10
 # go left and right workspace
 bindsym $mod+control+Left exec --no-startup-id bash ~/.i3/next_workspace.sh l
 bindsym $mod+control+Right exec --no-startup-id bash ~/.i3/next_workspace.sh r
-bindsym $mod+control+j exec --no-startup-id bash ~/.i3/next_workspace.sh l
-bindsym $mod+control+k exec --no-startup-id bash ~/.i3/next_workspace.sh r
+bindsym $mod+n exec --no-startup-id bash ~/.i3/next_workspace.sh l
+bindsym $mod+m exec --no-startup-id bash ~/.i3/next_workspace.sh r
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -255,9 +255,14 @@ exec wal -R
 # open i3 config file
 bindsym $mod+i exec gnome-terminal -e "vim /home/dharmin/.i3/config"
 
+# switch to beamer workspace
+bindsym $mod+p workspace beamer
 
+bindsym $mod+Shift+p move container to workspace beamer
+
+workspace beamer output HDMI-1
 # move workspace to projector
-bindsym $mod+x move workspace to output right
+# bindsym $mod+x move workspace to output right
 
 # open file explorer
 bindsym $mod+Shift+f exec nautilus --no-desktop
