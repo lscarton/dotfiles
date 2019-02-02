@@ -10,8 +10,8 @@ if [ $right -eq 11 ]
 then
     right=10
 fi
-#echo $left
-#echo $right
+# echo $left
+# echo $right
 
 if [ "$1" = "l" ]
 then

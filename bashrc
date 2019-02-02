@@ -64,9 +64,9 @@ parse_git_branch() {
 # git branch | grep '\*' | awk '{print ($2)}'
 }
 
-# triangle=$'\uE0B0'
+triangle=$'\uE0B0'
 if [ "$color_prompt" = yes ]; then
-    # PS1="\[\033[1;44m\]\W\[\033[0;44;33m\]\$(parse_git_branch) \[\033[0;34m\]$triangle\[\e[0m\] "
+    # PS1="\[\033[1;44m\][ \W ]\[\033[0;44;33m\]\$(parse_git_branch) \[\033[0;34m\]$triangle\[\e[0m\] "
     PS1="\[\033[1;44m\][ \W ]\[\033[0;44;33m\]\$(parse_git_branch)\[\033[0;34m\]\[\e[0m\] "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -131,12 +131,11 @@ cat ~/.cache/wal/sequences; clear
 
 # added by Anaconda3 installer
 #export PATH="/home/dharmin/anaconda3/bin:$PATH"
-. /home/dharmin/anaconda3/etc/profile.d/conda.sh
+source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-# source ~/omg-tools/examples/ros_example/devel/setup.bash
 # source ~/catkin_workspace/devel/setup.bash
 # source ~/study/sem3/catkin_ws/devel/setup.bash
 export ROBOT_ENV=brsu-c025-sim
