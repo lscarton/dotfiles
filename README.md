@@ -25,16 +25,15 @@ Config file and some useful bash scripts from `~/.i3/` are placed in this folder
 On fresh install of i3, the config file might be present in `~/.config/i3/`. You 
 might wanna delete this and create `~/.i3/`.
 
-### .vim
+### vim
+
+Files for vim terminal editor are present in this folder. This is generally 
+named `~/.vim/`.
 
 `.vim/plugged` is ignored here because the folders present inside
 are individual git repositories with their own `.git` files. Including these will
 not only be a mess but also considered plagarism. These are not important in most
 of the cases. These will be created when running `:PlugInstall` in vim.
-
-Snippets present in `vim/snippets` and `vim/ultisnips-snippets` are actually
-present in `~/.vim/Plugged/vim-snippets/snippets` and `~/.vim/Plugged/vim-snip
-pets/UltiSnips` respectively.
 
 ### urxvt
 

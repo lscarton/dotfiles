@@ -122,7 +122,7 @@ set tabstop=4
 set shiftwidth=0
 
 " Expand tabs into spaces
-set expandtab
+set expandtab|retab
 
 " Indent when moving to the next line while writing code
 set autoindent
@@ -193,7 +193,7 @@ let g:jedi#show_call_signatures = "2"
 "let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-a>"
-let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.vim/snippets/UltiSnips"
 let g:UltiSnipsEditSplit="tabdo"
 
 " Take out function preview from YCM

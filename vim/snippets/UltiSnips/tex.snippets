@@ -1,0 +1,103 @@
+snippet bf "Bold font" i
+\textbf{$0}
+endsnippet
+
+snippet ita "Italic font" i
+\textit{$0}
+endsnippet
+
+snippet tt "Monospace font" i
+\texttt{$0}
+endsnippet
+
+snippet simple_article "Simple article class" b
+\documentclass[12pt]{article}
+\usepackage{natbib,amsmath,amsfonts,fullpage,hyphenat,booktabs,graphicx,setspace}
+\usepackage[colorlinks,linkcolor=black,citecolor=blue,urlcolor=black]{hyperref}
+\setcitestyle{square,comma,super}
+\onehalfspacing
+
+\title{${2:Title}}
+\author{${3:Team member and }Dharmin Bakaraniya}
+\begin{document}
+\maketitle
+
+% \begin{abstract} 
+% \end{abstract} 
+
+\section{${4:Introduction}}
+$0
+
+% \begin{thebibliography}{1}
+%     \bibitem{uniqueKey}Authors ``Title'' Conference/journal name, year.
+%     \bibitem{anotherUniqueKey}\href{https://github.com/DharminB}{My git}
+% \end{thebibliography}
+
+\end{document}
+endsnippet
+
+snippet simple_beamer "Simple beamer template" b
+\documentclass{beamer}
+\usetheme{Rochester}
+%\usecolortheme{seagull}
+%\usecolortheme{whale}
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\usepackage{graphicx, booktabs} 
+
+\title{${2:Title}}
+\subtitle{${3:Subtitle}}
+\author{${4:Team Member and }Dharmin Bakaraniya}
+\institute{${5:Insitute}}
+\date{\today}
+\begin{document}
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+\begin{frame}
+\frametitle{\huge{${6:Introduction}}}
+$0
+%    \begin{itemize}
+%        \item Item 1
+%        \item Item 2
+%    \end{itemize}
+\end{frame}
+
+
+%\begin{frame}
+%    \frametitle{\huge{Blocks of Highlighted Text}}
+%    \begin{block}{Block 1}
+%        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+%    \end{block}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{\huge{Multiple Columns}}
+%    \begin{columns}[t]
+%        \column{.45\textwidth}
+%        \textbf{Heading}
+%        \begin{enumerate}
+%            \item Statement
+%        \end{enumerate}
+%        \column{.5\textwidth}
+%        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+%    \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{\huge{References}}
+%        \footnotesize{
+%        \begin{thebibliography}{1}
+%            \bibitem[Smith, 2012]{p1} John Smith (2012) Some pub, some date
+%        \end{thebibliography}
+%}
+%\end{frame}
+%
+%\begin{frame}
+%    \Huge{\centerline{Thank you}}
+%\end{frame}
+\end{document} 
+endsnippet

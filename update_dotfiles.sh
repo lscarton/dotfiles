@@ -21,8 +21,7 @@ mkdir ./vim
 cp -r ~/.vim/autoload ./vim
 cp -r ~/.vim/colors ./vim
 cp -r ~/.vim/spell ./vim
-cp -r ~/.vim/plugged/vim-snippets/snippets ./vim/snippets
-cp -r ~/.vim/plugged/vim-snippets/UltiSnips ./vim/ultisnips_snippets
+cp -r ~/.vim/snippets ./vim
 
 
 # folder from .config/
@@ -30,3 +29,6 @@ cp -r ~/.config/neofetch ./config
 cp -r ~/.config/rofi ./config
 cp -r ~/.config/ranger ./config
 cp -r ~/.config/zathura ./config
+
+# remove ranger history
+rm ./config/ranger/history
