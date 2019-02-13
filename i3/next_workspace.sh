@@ -1,5 +1,5 @@
 wsNum="$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')"
-#echo $wsNum
+# echo $wsNum
 left=$(($wsNum - 1))
 right=$(($wsNum + 1))
 if [ $left -eq 0 ]
@@ -19,7 +19,7 @@ then
 else
     ws=$right
 fi
-#echo $ws
+# echo $ws
 ws_name="workspace "$ws
-#echo $ws_name
+# echo $ws_name
 i3-msg $ws_name

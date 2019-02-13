@@ -95,7 +95,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -131,7 +131,7 @@ cat ~/.cache/wal/sequences; clear
 
 # added by Anaconda3 installer
 #export PATH="/home/dharmin/anaconda3/bin:$PATH"
-source /home/dharmin/anaconda3/etc/profile.d/conda.sh
+# source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
 source /opt/ros/kinetic/setup.bash
@@ -144,22 +144,17 @@ export ROBOT_ENV=brsu-c025-sim
 export ROBOT=youbot-brsu-1
 
 # using hsl solver for spline based motion planner
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/dharmin/omg-tools/coinhsl-linux-x86_64/lib
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/dharmin/omg-tools/coinhsl-linux-x86_64/lib
 
 # lejos path (lego brick)
-export NXJ_HOME=/opt/leJOS_NXJ_0.9.1beta-3
-export LEJOS_NXT_JAA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=/opt/leJOS_NXJ_0.9.1beta-3:$PATH
-
-# ruby path
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+# export NXJ_HOME=/opt/leJOS_NXJ_0.9.1beta-3
+# export LEJOS_NXT_JAA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+# export PATH=/opt/leJOS_NXJ_0.9.1beta-3:$PATH
 
 # gradle (multi agent)
 export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
 
- #vi command compatible
+# vi command compatible
 set -o vi
 
 export RANGER_LOAD_DEFAULT_RC=FALSE

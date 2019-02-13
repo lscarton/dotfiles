@@ -1,0 +1,50 @@
+rename object_list_merger_new.launch
+shell %s
+shell %p
+rename travel_form.odt
+shell -w echo %d/%s
+open_with 14
+rename explore_ros
+find fs
+mkdir usb1
+rename mount_drive.sh
+cd /tmp
+q
+shell touch presentation.tex
+rename ws18-project-right-brothers-master.zip
+shell bash %
+shell %d/%s
+shell touch wifi_plotter.py
+shell touch needed_packages
+rename aufenthaltstitel.pdf
+rename fiktionbeschiennigung.jpg
+rename fiktionsbescheinigung_1.jpg
+rename fiktionsbeschienigung_2.jpg
+rename data_sources_nav.yaml
+mkdir run_at_19_15_without_threading
+shell vim README.md
+
+shell 
+cd .config
+find i3
+cd ~/.cache/wal
+open_with 2
+mkdir run_at_10_45_with_threading
+mkdir run_at_13_56_with_threading
+mkdir run_at_14_01_with_threading
+mkdir run_at_14_27_without_threading
+rename [Planning 05]  -- HTN Planning.pdf
+rename [Planning 05] -- HTN Planning.pdf
+find 
+Q
+mkdir ftsm
+mkdir test_data
+rename input.png
+mkdir computer_vision
+find Ima
+cd  .vim
+shell touch fms_test
+open_with vim
+open_with 
+delete
+cd .vim

@@ -1,12 +1,12 @@
 #!/bin/bash
 if [ "$1" = "up" ]
 then
-    light -A 5
+    xbacklight -inc 5
 else
-    light -U 5
+    xbacklight -dec 5
 fi
 
-brightness="$(light -G -p)"
+brightness="$(xbacklight -get)"
 s="Brightness level:" 
 echo $s
 #notify-send -u low "$s"

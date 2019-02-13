@@ -252,5 +252,4 @@ let g:netrw_liststyle=3     "tree view
 
 " set color column
 hi ColorColumn ctermbg=darkgrey guibg=lightgrey
-set colorcolumn=100
-
+set colorcolumn=80
