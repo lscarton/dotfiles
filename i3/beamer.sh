@@ -23,7 +23,7 @@ INTERNAL_OUTPUT="eDP1"
 
 choices="laptop\ndual\nexternal\nclone"
 
-chosen=$(echo -e $choices | dmenu -i -p "which configuration?")
+chosen=$(echo -e $choices | rofi -dmenu -i -fn "Monospace-13" -p "which configuration?")
 
 # Detect extenal monitor
 if [ `xrandr | grep HDMI1 | grep -c ' connected '` -eq 1 ]; then

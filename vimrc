@@ -88,7 +88,7 @@ set listchars=nbsp:_,trail:.,tab:▸\ ,eol:¬
 " set list
 
 " disable auto-commenting when entering new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions+=c formatoptions+=r formatoptions-=o
 
 " enter the current millenium
 set nocompatible
@@ -96,18 +96,15 @@ set nocompatible
 " wildmenu for fuzzy file finding
 set wildmenu
 
-" disable wrapping the lines
-set nowrap
-
 set foldmethod=indent  " Default fold method
 " set the method for folding depending on language
 autocmd FileType c,cpp,java,scala set foldmethod=syntax
 autocmd FileType sh,ruby,python   set foldmethod=indent
 set foldmethod=indent   
 " level of nesting to fold
-set foldnestmax=10
+set foldnestmax=4
 "set nofoldenable
-set foldlevel=10
+set foldlevel=1
 
 " Show line numbers
 set number
@@ -132,6 +129,17 @@ set showmatch
 
 " setting smart indentation
 set smartindent
+
+" set color column
+hi ColorColumn ctermbg=darkgrey guibg=lightgrey
+set colorcolumn=80
+" set textwidth
+set textwidth=80
+" disable autowrap text when writing in insert mode
+set formatoptions-=t
+" disable wrapping the lines
+set nowrap
+
 
 " Enable all Python syntax highlighting features
 "let python_highlight_all = 1
@@ -250,6 +258,3 @@ let g:netrw_browse_split=4 "open in prior window
 let g:netrw_altv=1          "open splits to the right
 let g:netrw_liststyle=3     "tree view
 
-" set color column
-hi ColorColumn ctermbg=darkgrey guibg=lightgrey
-set colorcolumn=80

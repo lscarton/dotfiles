@@ -161,6 +161,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# shutdown the system
+bindsym $mod+Shift+Escape exec "i3-nagbar -t error -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, Shutdown' 'shutdown now'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -306,7 +308,8 @@ for_window [class="Google-chrome"] border none
 
 assign [class="Google-chrome"] 1
 
-assign [class="Spotify"] 10
+assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
+for_window [class="Spotify"] move to workspace 10
 
 
 ########################################
@@ -324,7 +327,8 @@ exec wal -R
 exec --no-startup-id google-chrome
 # open terminal in workspace 2 on startup
 exec --no-startup-id i3-msg 'workspace 2; exec urxvt'
-
+# open spotify client
+exec --no-startup-id spotify
 
 # enable natural scrolling (like on a phone)
 exec --no-startup-id synclient VertScrollDelta=-111
@@ -347,4 +351,5 @@ exec bash ~/.i3/low_battery.sh
 # turn touchpad on
 #synclient TouchpadOff=0
 
-exec --no-startup-id spotify
+# map capslock key to escape key
+exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
