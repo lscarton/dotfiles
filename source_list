@@ -1,0 +1,35 @@
+#! /bin/sh
+
+# This is a script used for executing scripts, sourcing softwares and other
+# things before starting a terminal. These are not related to bash or zsh and 
+# thus kept in a seperate file.
+
+# Import colorscheme from 'wal' asynchronously
+cat ~/.cache/wal/sequences; clear
+
+# Anaconda3 stuff
+#export PATH="/home/dharmin/anaconda3/bin:$PATH"
+# source /home/dharmin/anaconda3/etc/profile.d/conda.sh
+
+# ROS stuff 
+source /opt/ros/kinetic/setup.zsh
+source ~/catkin_ws/devel/setup.zsh
+# source /opt/ros/kinetic/setup.bash
+# source ~/catkin_ws/devel/setup.bash
+# source ~/catkin_workspace/devel/setup.bash
+# source ~/study/sem3/catkin_ws/devel/setup.bash
+export ROBOT_ENV=brsu-c025-sim
+# export ROBOT_ENV=single-room
+# export ROBOT_ENV=double-room
+export ROBOT=youbot-brsu-1
+
+# gradle (multi agent)
+export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
+
+# ranger file browser related settings
+export RANGER_LOAD_DEFAULT_RC=FALSE
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
+
+# neofetch on start
+neofetch --source ~/.config/neofetch/batman3
+

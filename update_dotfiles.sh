@@ -4,7 +4,8 @@
 
 # bashrc, bash_alias, Xdefaults, vimrc
 cp ~/.bashrc ./bashrc
-cp ~/.bash_aliases ./bash_aliases
+cp ~/.zshrc ./zshrc
+cp ~/.source_list ./source_list
 cp ~/.Xdefaults ./Xdefaults
 cp ~/.vimrc ./vimrc
 

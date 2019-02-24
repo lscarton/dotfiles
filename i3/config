@@ -306,7 +306,7 @@ for_window [class="Google-chrome"] border none
 # assigning application to workspaces
 #########################################
 
-assign [class="Google-chrome"] 1
+# assign [class="Google-chrome"] 1
 
 assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
