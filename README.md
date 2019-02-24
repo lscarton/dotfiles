@@ -6,8 +6,11 @@ your system.
 ### Standard rc files
 
 - `.bashrc` (config file for bash)
+- `.zshrc` (config file for zsh)
 - `.vimrc` (config file for vim)
 - `.Xdefaults` (config file for urxvt)
+- `aliases` (some aliases for bash/zsh that I commonly use)
+- `source_list` (list of commands to run before starting terminal)
 
 ### Config folder for a few programs
 
