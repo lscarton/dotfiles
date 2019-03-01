@@ -68,7 +68,7 @@ setopt hist_find_no_dups
 # write to history after each command
 setopt inc_append_history
 bindkey "^F" history-beginning-search-forward
-bindkey "^R" history-beginning-search-backward
+bindkey "^R" history-incremental-search-backward
 
 # rehash automatically so new files in $PATH are found
 zstyle ':completion:*' rehash true
@@ -81,6 +81,14 @@ stty -ixon
 zstyle :compinstall filename '/home/dharmin/.zshrc'
 
 # End of lines added by compinstall
+
+# function zle-line-init zle-keymap-select {
+#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 # source zsh_aliases file
 source ~/dotfiles/aliases

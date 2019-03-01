@@ -5,19 +5,19 @@
 # thus kept in a seperate file.
 
 # Import colorscheme from 'wal' asynchronously
-cat ~/.cache/wal/sequences; clear
+# cat ~/.cache/wal/sequences; clear
 
 # Anaconda3 stuff
 #export PATH="/home/dharmin/anaconda3/bin:$PATH"
 # source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
-source /opt/ros/kinetic/setup.zsh
-source ~/catkin_ws/devel/setup.zsh
 # source /opt/ros/kinetic/setup.bash
+source /opt/ros/kinetic/setup.zsh
 # source ~/catkin_ws/devel/setup.bash
+source ~/catkin_ws/devel/setup.zsh
 # source ~/catkin_workspace/devel/setup.bash
-# source ~/study/sem3/catkin_ws/devel/setup.bash
+# source ~/catkin_workspace/devel/setup.zsh
 export ROBOT_ENV=brsu-c025-sim
 # export ROBOT_ENV=single-room
 # export ROBOT_ENV=double-room
