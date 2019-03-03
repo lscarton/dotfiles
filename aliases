@@ -13,6 +13,16 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# combine cd and ls functions
+function cdls(){
+    cd "$@" && ls
+}
+
+# parent directories aliases
+alias ...='cdls ../..'
+alias ....='cdls ../../..'
+alias .....='cdls ../../../..'
+
 # run matlab editor binary
 alias matlab='/usr/local/MATLAB/R2018a/bin/matlab'
 
@@ -29,5 +39,6 @@ alias pendrive='~/.i3/pendrive.sh'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# youbot specific aliases
 alias yb2='ssh robocup@youbot-brsu-4-pc1'
 alias yb2l='ssh robocup@youbot-brsu-4-pc1-lan'

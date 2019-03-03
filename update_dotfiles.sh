@@ -31,5 +31,6 @@ cp -r ~/.config/rofi ./config
 cp -r ~/.config/ranger ./config
 cp -r ~/.config/zathura ./config
 
-# remove ranger history
+# remove ranger history and bookmark
 rm ./config/ranger/history
+rm ./config/ranger/bookmarks
