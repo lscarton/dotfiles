@@ -22,7 +22,7 @@ mkdir ./vim
 cp -r ~/.vim/autoload ./vim
 cp -r ~/.vim/colors ./vim
 cp -r ~/.vim/spell ./vim
-cp -r ~/.vim/snippets ./vim
+cp -r ~/.vim/UltiSnips ./vim
 
 
 # folder from .config/

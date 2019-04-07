@@ -40,5 +40,8 @@ alias pendrive='~/.i3/pendrive.sh'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # youbot specific aliases
-alias yb2='ssh robocup@youbot-brsu-4-pc1'
-alias yb2l='ssh robocup@youbot-brsu-4-pc1-lan'
+alias yb2='ssh robocup@youbot-brsu-2-pc1'
+alias yb2l='ssh robocup@youbot-brsu-2-pc1-lan'
+alias yb4pc2='ssh robocup@youbot-brsu-4-pc2'
+alias export_yb4='export ROS_MASTER_URI=http://192.168.1.140:11311'
+alias export_yb4pc2='export ROS_MASTER_URI=http://youbot-brsu-4-pc2:11311'

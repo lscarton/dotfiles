@@ -9,7 +9,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -48,15 +48,18 @@ vmap <ScrollWheelDown> <nop>
 " setting to keep cursor line in middle
 set scrolloff=5
 
+" Vim loads indentation and plugins acc. to detected filetype
 "filetype plugin indent on
 filetype plugin on
 
+" Vim jumps to last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 " Run current script in python with F5
-nnoremap <F5> :! python3 %<cr>
+nnoremap <F5> :! python %<cr>
+" nnoremap <F5> :! python3 %<cr>
 
 " Set spell check"
 " set spell spelllang=en_us
@@ -78,7 +81,7 @@ autocmd! bufwritepost .vimrc source %
 autocmd bufwritepost ~/st-0.8.1/config.h !sudo make install
 
 " Comment lines or blocks
-noremap <leader>] :Commentary<cr>
+noremap <silent> <C-_> :Commentary<cr>
 
 " Enable syntax highlighting
 syntax enable
@@ -201,7 +204,8 @@ let g:jedi#show_call_signatures = "2"
 "let g:UltiSnipsExpandTrigger="<c-j>"
 " let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-a>"
-let g:UltiSnipsSnippetsDir="~/.vim/snippets/UltiSnips"
+" let g:UltiSnipsSnippetsDir="~/.vim/snippets"
+let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="tabdo"
 
 " Take out function preview from YCM
@@ -228,7 +232,7 @@ let g:jedi#show_call_signatures_delay = 1
 
 " Syntastic configuration
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ['pyflakes']
 
 
