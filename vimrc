@@ -29,8 +29,8 @@ colorscheme wal
 :command! Wq wq
 :command! YCMoff let g:ycm_auto_trigger=0
 :command! ST SyntasticToggleMode
+:command! SC SyntasticCheck
 :command! Label VimtexLabelsOpen
-:command! Png normal $<C-v>G$hA.png<esc>
 
 " mapping Tab and Shift+Tab to move among tabs
 nnoremap <Tab> gt
@@ -58,8 +58,8 @@ if has("autocmd")
 endif
 
 " Run current script in python with F5
+" nnoremap <F5> :! python %<cr>
 nnoremap <F5> :! python %<cr>
-" nnoremap <F5> :! python3 %<cr>
 
 " Set spell check"
 " set spell spelllang=en_us
@@ -231,9 +231,16 @@ let g:jedi#show_call_signatures_delay = 1
 
 
 " Syntastic configuration
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pyflakes']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_tex_checkers = ['proselint']
+let b:syntastic_mode = "passive"
 
 
 " Window

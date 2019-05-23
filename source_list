@@ -15,17 +15,17 @@ source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
 # source /opt/ros/kinetic/setup.bash
-source /opt/ros/kinetic/setup.zsh
+# source /opt/ros/kinetic/setup.zsh
 
 # source ~/catkin_ws/devel/setup.bash
-source ~/catkin_ws/devel/setup.zsh
+# source ~/catkin_ws/devel/setup.zsh
 export ROBOT_ENV=brsu-c025-sim
 # export ROBOT_ENV=single-room
 # export ROBOT_ENV=double-room
 export ROBOT=youbot-brsu-1
 
 # source ~/catkin_workspace/devel/setup.bash
-# source ~/catkin_workspace/devel/setup.zsh
+source ~/catkin_workspace/devel/setup.zsh
 
 # gradle (multi agent)
 export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
