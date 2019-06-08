@@ -308,6 +308,8 @@ for_window [class="Google-chrome"] border none
 
 assign [class="Google-chrome"] 1
 
+assign [class="Slack"] 9
+
 assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
 
@@ -327,6 +329,8 @@ exec wal -R
 exec --no-startup-id google-chrome
 # open terminal in workspace 2 on startup
 exec --no-startup-id i3-msg 'workspace 2; exec urxvt'
+# open slack
+exec --no-startup-id slack
 # open spotify client
 exec --no-startup-id spotify
 
