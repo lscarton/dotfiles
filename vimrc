@@ -59,7 +59,7 @@ endif
 
 " Run current script in python with F5
 " nnoremap <F5> :! python %<cr>
-nnoremap <F5> :! python %<cr>
+nnoremap <F5> :! python3 %<cr>
 
 " Set spell check"
 " set spell spelllang=en_us
