@@ -18,6 +18,9 @@ export ROBOT_ENV=brsu-c025-sim
 # export ROBOT_ENV=single-room
 # export ROBOT_ENV=double-room
 export ROBOT=youbot-brsu-1
+export ROPOD_ID=ropod_001
+export ROPOD_GYM_MODEL_PATH=/home/dharmin/study/fun_coding/rl_with_ropod/gym-ropod/model_config
+export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
 
 # use the previously chose catkin workspace
 source $(cat ~/.i3/chosen_catkin_workspace)

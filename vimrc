@@ -9,7 +9,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
-" Plug 'tomasr/molokai'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -145,7 +145,7 @@ set nowrap
 
 
 " Enable all Python syntax highlighting features
-"let python_highlight_all = 1
+let python_highlight_all = 1
 
 " Mouse click
 " set mouse=a
