@@ -20,7 +20,8 @@ call plug#end()
 " colo molokai
 " let g:molokai_original=0
 " color new_theme
-colorscheme wal
+" colorscheme wal
+colorscheme onedark
 
 " my mappings
 :command! W w
