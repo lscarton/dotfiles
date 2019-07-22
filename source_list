@@ -25,6 +25,9 @@ export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
 # use the previously chose catkin workspace
 source $(cat ~/.i3/chosen_catkin_workspace)
 
+# Nao stuff
+export PYTHONPATH=${PYTHONPATH}:/home/dharmin/pynaoqi-python2.7-2.1.4.13-linux64
+
 # gradle (multi agent)
 export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
 

@@ -28,6 +28,7 @@ colorscheme wal
 :command! WQ wq
 :command! Wq wq
 :command! YCMoff let g:ycm_auto_trigger=0
+:command! YCMon let g:ycm_auto_trigger=1
 :command! ST SyntasticToggleMode
 :command! SC SyntasticCheck
 :command! Label VimtexLabelsOpen
