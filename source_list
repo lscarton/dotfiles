@@ -26,7 +26,10 @@ export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
 source $(cat ~/.i3/chosen_catkin_workspace)
 
 # Nao stuff
-export PYTHONPATH=${PYTHONPATH}:/home/dharmin/pynaoqi-python2.7-2.1.4.13-linux64
+# export PYTHONPATH=${PYTHONPATH}:/opt/pynaoqi-python2.7-2.1.2.17-linux64
+export PYTHONPATH=${PYTHONPATH}:~/naoqi/pynaoqi-python2.7-2.1.2.17-linux64
+export AL_DIR=~/naoqi/naoqi-sdk-2.1.2.17-linux64
+export AL_DIR_SIM=~/naoqi/naoqi-sdk-2.1.2.17-linux64
 
 # gradle (multi agent)
 export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin

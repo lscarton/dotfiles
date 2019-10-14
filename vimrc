@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/davidhalter/jedi-vim
 Plug 'davidhalter/jedi-vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -33,6 +33,10 @@ colorscheme onedark
 :command! ST SyntasticToggleMode
 :command! SC SyntasticCheck
 :command! Label VimtexLabelsOpen
+
+" change cursor in different modes
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " mapping Tab and Shift+Tab to move among tabs
 nnoremap <Tab> gt
@@ -233,16 +237,16 @@ let g:jedi#show_call_signatures_delay = 1
 
 
 " Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_tex_checkers = ['proselint']
-let b:syntastic_mode = "passive"
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_tex_checkers = ['proselint']
+" let b:syntastic_mode = "passive"
 
 
 " Window
@@ -252,10 +256,10 @@ nmap <leader>s<up>    :topleft  new<CR>
 nmap <leader>s<down>  :botright new<CR>
 
 " Move between spltis
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <A-Up> :wincmd k<CR>
+nmap <A-Down> :wincmd j<CR>
+nmap <A-Left> :wincmd h<CR>
+nmap <A-Right> :wincmd l<CR>
 
 
 
