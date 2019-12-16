@@ -14,10 +14,10 @@ export TERM=xterm-256color
 source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
-export ROBOT_ENV=brsu-c025-sim
-# export ROBOT_ENV=single-room
-# export ROBOT_ENV=double-room
-export ROBOT=youbot-brsu-1
+export ROBOT_ENV=empty-world
+export ROBOT=youbot-brsu-arm
+# export ROBOT_ENV=brsu-c025-sim
+# export ROBOT=youbot-brsu-1
 export ROPOD_ID=ropod_001
 export ROPOD_GYM_MODEL_PATH=/home/dharmin/study/fun_coding/rl_with_ropod/gym-ropod/model_config
 export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
