@@ -231,9 +231,8 @@ bindsym --release Shift+Print exec scrot -s ~/Pictures/Screenshots/Screenshot_fr
 # exec xwinwrap -g 1366x768 -ov -ni -s -nf -- gifview -w WID ~/Pictures/bg3.gif -a
 bindsym $mod+g exec ~/.i3/gif_selector.sh
 
-# Just to add extra coolness
-bindsym $mod+x exec notify-send -i face-cool "'ssup?"
-
+# move a container to screen on the right
+bindsym $mod+x move container to output right
 
 
 
