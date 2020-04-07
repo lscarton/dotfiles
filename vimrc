@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/davidhalter/jedi-vim
 Plug 'davidhalter/jedi-vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-" Plug 'vim-syntastic/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -13,14 +12,19 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'dylanaraps/wal.vim'
 call plug#end()
 
-" Call color scheme
-" colo molokai
-" let g:molokai_original=0
 " color new_theme
-" colorscheme wal
+
+" onedark.vim override: Don't set a background color when running in a
+" terminal (transparent bg)
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+  augroup END
+endif
 colorscheme onedark
 
 " my mappings
@@ -30,8 +34,6 @@ colorscheme onedark
 :command! Wq wq
 :command! YCMoff let g:ycm_auto_trigger=0
 :command! YCMon let g:ycm_auto_trigger=1
-:command! ST SyntasticToggleMode
-:command! SC SyntasticCheck
 :command! Label VimtexLabelsOpen
 
 " change cursor in different modes
@@ -82,9 +84,6 @@ vnoremap <C-v> "+p
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-
-" Automatic recompiling of st config.h
-autocmd bufwritepost ~/st-0.8.1/config.h !sudo make install
 
 " Comment lines or blocks
 noremap <silent> <C-_> :Commentary<cr>
@@ -234,19 +233,6 @@ let g:jedi#popup_on_dot = 1
 let g:jedi#completions_command = "<C-N>"
 let g:jedi#show_call_signatures = "2"
 let g:jedi#show_call_signatures_delay = 1
-
-
-" Syntastic configuration
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_python_checkers = ['pylint']
-" let g:syntastic_tex_checkers = ['proselint']
-" let b:syntastic_mode = "passive"
 
 
 " Window

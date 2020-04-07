@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ "$1" = "up" ]
 then
-    xbacklight -inc 5
+    xbacklight -inc 2.5
 else
-    xbacklight -dec 5
+    xbacklight -dec 2.5
 fi
 
 brightness="$(xbacklight -get)"

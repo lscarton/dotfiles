@@ -200,8 +200,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Escape exec "~/.i3/pre_lock.sh; exec i3lock -i /tmp/screenlock.png"
 # bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lock.png
 
-# open chrome
-bindsym $mod+c exec google-chrome
+# open brave browser
+bindsym $mod+c exec brave-browser
 
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% && notify-send "Volume up" -h string:x-canonical-private-synchronous:anything #increase sound volume
@@ -297,8 +297,8 @@ hide_edge_borders smart
 default_border pixel 5
 default_floating_border normal
 
-# make the chrome window title and border less
-for_window [class="Google-chrome"] border none
+# make the brave browser window title and border less
+for_window [class="Brave-browser"] border none
 
 
 
@@ -306,7 +306,7 @@ for_window [class="Google-chrome"] border none
 # assigning application to workspaces
 #########################################
 
-assign [class="Google-chrome"] 1
+assign [class="Brave-browser"] 1
 
 assign [class="Slack"] 9
 
@@ -325,8 +325,8 @@ exec wicd-client --tray
 # apply wal colorscheme if present
 exec wal -R
 
-# open chrome on startup
-exec --no-startup-id google-chrome
+# open brave browser on startup
+exec --no-startup-id brave-browser
 # open terminal in workspace 2 on startup
 exec --no-startup-id i3-msg 'workspace 2; exec urxvt'
 # open slack
