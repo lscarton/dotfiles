@@ -1,5 +1,7 @@
 # zsh aliases
 
+alias sz='source $HOME/.zshrc'
+
 # colorise ls command
 alias ls='ls --color=auto'
 
@@ -25,9 +27,6 @@ function cdls(){
 alias ...='cdls ../..'
 alias ....='cdls ../../..'
 alias .....='cdls ../../../..'
-
-# run matlab editor binary
-alias matlab='/usr/local/MATLAB/R2018a/bin/matlab'
 
 # run ranger (with exiing to selected directory option)
 alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
