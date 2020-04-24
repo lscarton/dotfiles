@@ -1,6 +1,6 @@
 #! /bin/sh
 
-current_dir="`dirname \"$0\"`"              # relative
+current_dir="$HOME/.config/catkin_workspace"
 current_dir="`( cd \"$current_dir\" && pwd )`"  # absolutized and normalized
 catkin_workspaces_file="$current_dir""/catkin_workspaces"
 catkin_workspaces=`cat $catkin_workspaces_file`
