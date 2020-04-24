@@ -8,14 +8,10 @@ cp ~/.source_list ./source_list
 cp ~/.Xdefaults ./Xdefaults
 cp ~/.vimrc ./vimrc
 
-# .urxvt/ .i3/
-rm -rf ./i3
-cp -r ~/.i3 ./i3
-
 rm -rf ./urxvt
 cp -r ~/.urxvt ./urxvt
 
-# # some folder in .vim
+# some folders in .vim
 rm -rf ./vim
 mkdir ./vim
 cp -r ~/.vim/autoload ./vim
@@ -25,6 +21,7 @@ cp -r ~/.vim/UltiSnips ./vim
 
 
 # folder from .config/
+cp -r ~/.config/i3 ./config
 cp -r ~/.config/neofetch ./config
 cp -r ~/.config/rofi ./config
 cp -r ~/.config/ranger ./config
