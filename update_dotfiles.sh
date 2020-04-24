@@ -2,8 +2,7 @@
 
 # update the dotfiles from different locations
 
-# bashrc, bash_alias, Xdefaults, vimrc
-cp ~/.bashrc ./bashrc
+# Xdefaults, vimrc
 cp ~/.zshrc ./zshrc
 cp ~/.source_list ./source_list
 cp ~/.Xdefaults ./Xdefaults

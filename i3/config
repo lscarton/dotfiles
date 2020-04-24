@@ -234,7 +234,8 @@ bindsym $mod+g exec ~/.i3/gif_selector.sh
 # move a container to screen on the right
 bindsym $mod+x move container to output right
 
-
+bindsym $mod+Shift+equal gaps inner current plus 10
+bindsym $mod+Shift+minus gaps inner current minus 10
 
 
 
@@ -285,21 +286,23 @@ bar {
 bindsym $mod+z exec bash ~/.i3/toggle_bar.sh
 
 
-
-
-
-
 ##########################################
 # BORDER SETTINGS
 ##########################################
 
 hide_edge_borders smart
-default_border pixel 5
+default_border pixel 3
 default_floating_border normal
 
 # make the brave browser window title and border less
 for_window [class="Brave-browser"] border none
 
+# gap between containers (in pixels)
+gaps inner 20
+gaps outer 0
+
+workspace 1 gaps inner 0
+workspace 9 gaps inner 0
 
 
 #########################################
