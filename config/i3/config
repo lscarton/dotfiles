@@ -201,7 +201,10 @@ bindsym $mod+Escape exec "~/dotfiles/scripts/pre_lock.sh; exec i3lock -i /tmp/sc
 # bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lock.png
 
 # open brave browser
-bindsym $mod+c exec brave-browser
+bindsym $mod+b exec --no-startup-id brave-browser
+
+# open qutebrowser
+bindsym $mod+c exec --no-startup-id qutebrowser
 
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% && notify-send "Volume up" -h string:x-canonical-private-synchronous:anything #increase sound volume
@@ -216,20 +219,20 @@ bindsym XF86MonBrightnessUp exec  --no-startup-id bash ~/dotfiles/scripts/change
 bindsym XF86MonBrightnessDown exec --no-startup-id bash ~/dotfiles/scripts/change_brightness.sh down  # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-# switch to beamer workspace
-bindsym $mod+b exec --no-startup-id bash ~/dotfiles/scripts/beamer.sh 
+# switch to beamer workspace (for presentations)
+bindsym $mod+p exec --no-startup-id bash ~/dotfiles/scripts/beamer.sh 
 
 # Screen shot
-bindsym --release Print exec scrot ~/Pictures/Screenshots/Screenshot_from_%F_%T.png
-bindsym --release Shift+Print exec scrot -s ~/Pictures/Screenshots/Screenshot_from_%F_%T_cropped.png
+bindsym --release Print exec --no-startup-id scrot ~/Pictures/Screenshots/Screenshot_from_%F_%T.png
+bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Pictures/Screenshots/Screenshot_from_%F_%T_cropped.png
 
 # gif background
 # exec xwinwrap -g 1366x768 -ov -ni -s -nf -- gifview -w WID ~/Pictures/bg3.gif -a
-bindsym $mod+g exec ~/dotfiles/scripts/gif_selector.sh
+bindsym $mod+g exec --no-startup-id ~/dotfiles/scripts/gif_selector.sh
 
 # move a container to screen on the right
 bindsym $mod+x move container to output right
@@ -283,7 +286,7 @@ bar {
 }
 
 # dock or hide status bar
-bindsym $mod+z exec bash ~/dotfiles/scripts/toggle_bar.sh
+bindsym $mod+z exec --no-startup-id bash ~/dotfiles/scripts/toggle_bar.sh
 
 
 ##########################################
@@ -323,15 +326,13 @@ for_window [class="Spotify"] move to workspace 10
 
 # wifi controller on startup
 # exec nm-applet
-exec wicd-client --tray
+exec --no-startup-id wicd-client --tray
 
 # apply wal colorscheme if present
-exec wal -R
+exec --no-startup-id wal -R
 
-# open brave browser on startup
-exec --no-startup-id brave-browser
-# open terminal in workspace 2 on startup
-exec --no-startup-id i3-msg 'workspace 2; exec urxvt'
+# open qute browser on startup
+exec --no-startup-id qutebrowser
 # open slack
 exec --no-startup-id slack
 # open spotify client
@@ -343,7 +344,7 @@ exec --no-startup-id synclient VertScrollDelta=-111
 #exec --no-startup-id synclient VertScrollDelta=117
 
 # set wallpaper
-exec feh --bg-scale ~/Pictures/Wallpapers/blue_material_design.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/blue_material_design.jpg
 
 #to locate the access point(AP) name. 
 #nmcli dev wifi 
@@ -353,7 +354,7 @@ exec feh --bg-scale ~/Pictures/Wallpapers/blue_material_design.jpg
 exec --no-startup-id compton --backend glx --vsync opengl-swc
 
 # battery notifiction
-exec bash ~/dotfiles/scripts/low_battery.sh
+exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 
 # turn touchpad on
 #synclient TouchpadOff=0
