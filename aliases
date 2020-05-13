@@ -35,7 +35,7 @@ alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.rangerdi
 alias p='ping 8.8.8.8'
 
 # alias for mounting and unmounting usb
-alias pendrive='~/.i3/pendrive.sh'
+alias pendrive='~/dotfiles/scripts/pendrive.sh'
 
 # alias for choosing workspace
 alias choose_catkin_ws='~/dotfiles/scripts/catkin_workspace_switcher.sh'

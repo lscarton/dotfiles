@@ -1,10 +1,15 @@
-# URxvt settings
+#include "/home/dharmin/.config/nord.xresource"
+
+! ==============
+! URxvt settings
+! ==============
 /* scroll back limit */
 URxvt.saveLines: 20000
 
 URxvt.intensityStyles:	false
 
-URxvt.background:   [93]#292c36
+URxvt*depth: 32
+URxvt.background:   [93]nord0
 
 URxvt.font: 		xft:monospace:size=12
 URxvt.scrollBar:	false
@@ -27,3 +32,10 @@ URxvt.keyboard-select.clipboard: true
 !! Matcher
 URxvt.url-launcher:	webview
 URxvt.matcher.button:	1
+
+! =========
+! i3 colors
+! =========
+i3wm.background: nord0
+i3wm.foreground: nord4
+i3wm.fadeColor: nord3

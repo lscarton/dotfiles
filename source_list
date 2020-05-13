@@ -4,9 +4,6 @@
 # things before starting a terminal. These are not related to bash or zsh and 
 # thus kept in a seperate file.
 
-# Import colorscheme from 'wal' asynchronously
-# cat ~/.cache/wal/sequences; clear
-
 export TERM=xterm-256color
 
 # Anaconda3 stuff
@@ -14,10 +11,10 @@ export TERM=xterm-256color
 source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
-# export ROBOT_ENV=empty-world
-# export ROBOT=youbot-brsu-arm
-export ROBOT_ENV=brsu-c025-sim
-export ROBOT=youbot-brsu-1
+export ROBOT_ENV=empty-world
+export ROBOT=youbot-brsu-arm
+# export ROBOT_ENV=brsu-c025-sim
+# export ROBOT=youbot-brsu-1
 export ROPOD_ID=ropod_001
 export ROPOD_GYM_MODEL_PATH=/home/dharmin/study/fun_coding/rl_with_ropod/gym-ropod/model_config
 export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
@@ -25,19 +22,9 @@ export CATKIN_WORKSPACE=/home/dharmin/catkin_workspace
 # use the previously chose catkin workspace
 source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
 
-# Nao stuff
-# export PYTHONPATH=${PYTHONPATH}:/opt/pynaoqi-python2.7-2.1.2.17-linux64
-export PYTHONPATH=${PYTHONPATH}:~/naoqi/pynaoqi-python2.7-2.1.2.17-linux64
-export AL_DIR=~/naoqi/naoqi-sdk-2.1.2.17-linux64
-export AL_DIR_SIM=~/naoqi/naoqi-sdk-2.1.2.17-linux64
-
-# gradle (multi agent)
-export PATH=$PATH:/opt/gradle/gradle-4.10.2/bin
-
 # ranger file browser related settings
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3
-

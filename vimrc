@@ -12,20 +12,10 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-" color new_theme
-
-" onedark.vim override: Don't set a background color when running in a
-" terminal (transparent bg)
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
-  augroup END
-endif
-colorscheme onedark
+colorscheme nord
 
 " my mappings
 :command! W w

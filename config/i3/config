@@ -231,7 +231,6 @@ bindsym --release Print exec --no-startup-id scrot ~/Pictures/Screenshots/Screen
 bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Pictures/Screenshots/Screenshot_from_%F_%T_cropped.png
 
 # gif background
-# exec xwinwrap -g 1366x768 -ov -ni -s -nf -- gifview -w WID ~/Pictures/bg3.gif -a
 bindsym $mod+g exec --no-startup-id ~/dotfiles/scripts/gif_selector.sh
 
 # move a container to screen on the right
@@ -246,24 +245,28 @@ bindsym $mod+Shift+minus gaps inner current minus 10
 # COLOR SETTINGS
 ###########################################
 
-set $bg-color            #111111
-set $inactive-bg-color   #333333
-set $fg-color          #0084ff
 set $inactive-fg-color #676E7D
 set $urgent-bg-color     #E53935
 
-set_from_resource $bg-color i3wm.color1         #111111
-set_from_resource $light-bg-color i3wm.color2   #f0f0f0
-set_from_resource $fg-color i3wm.color7         #0084ff
-set_from_resource $darkest-color i3wm.color0    #000000
-# set $darkest-color #000000
+set_from_resource $bg-color i3wm.color0             #000000
+set_from_resource $red i3wm.color1                  #FF0000
+set_from_resource $green i3wm.color2                #00FF00
+set_from_resource $yellow i3wm.color3               #00FFFF
+set_from_resource $blue i3wm.color4                 #0000FF
+set_from_resource $violet i3wm.color5               #FF00FF
+set_from_resource $light-blue i3wm.color6           #88CCDD
+set_from_resource $white i3wm.color7                #88CCDD
+set_from_resource $fg-color i3wm.foreground         #FFFFFF
+set_from_resource $dark-bg-color i3wm.background    #000000
+set_from_resource $inactive-bg-color i3wm.fadeColor #111111
+set_from_resource $urgent-bg-color i3wm.color1      #111111
 
 # window colors
-#                       border              background         fg                 indicator
-client.focused          $bg-color           $bg-color          $fg-color          #000000
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-fg-color #111111
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-fg-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $fg-color          #ff0000
+#                       border              background          fg                  indicator
+client.focused          $blue               $blue               $fg-color           #000000
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $fg-color  #111111
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $fg-color  #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color    $fg-color           #ff0000
 
 
 ###################################
@@ -271,18 +274,15 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $fg-color        
 ###################################
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    # tray_output primary
     colors {
-        background $darkest-color
-        separator #757575
+        background $dark-bg-color
+        separator $fg-color
         #                  border               background         fg
-        focused_workspace  $bg-color            $fg-color          $bg-color
-        inactive_workspace $darkest-color       $darkest-color     $inactive-fg-color
+        focused_workspace  $dark-bg-color       $blue              $dark-bg-color
+        inactive_workspace $dark-bg-color       $dark-bg-color     $blue
         urgent_workspace   $urgent-bg-color     $urgent-bg-color   $fg-color
     }
     mode hide
-#    hidden_state hide
-#    modifier Mod1
 }
 
 # dock or hide status bar
@@ -296,9 +296,6 @@ bindsym $mod+z exec --no-startup-id bash ~/dotfiles/scripts/toggle_bar.sh
 hide_edge_borders smart
 default_border pixel 3
 default_floating_border normal
-
-# make the brave browser window title and border less
-for_window [class="Brave-browser"] border none
 
 # gap between containers (in pixels)
 gaps inner 20
@@ -327,9 +324,6 @@ for_window [class="Spotify"] move to workspace 10
 # wifi controller on startup
 # exec nm-applet
 exec --no-startup-id wicd-client --tray
-
-# apply wal colorscheme if present
-exec --no-startup-id wal -R
 
 # open qute browser on startup
 exec --no-startup-id qutebrowser
