@@ -245,6 +245,9 @@ bindsym $mod+Shift+minus gaps inner current minus 10
 # COLOR SETTINGS
 ###########################################
 
+# udpate X resources database with .Xdefaults file
+exec xrdb ~/.Xdefaults
+
 set $inactive-fg-color #676E7D
 set $urgent-bg-color     #E53935
 
@@ -313,6 +316,8 @@ assign [class="Brave-browser"] 1
 
 assign [class="Slack"] 9
 
+assign [class="Riot"] 9
+
 assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
 
@@ -325,10 +330,7 @@ for_window [class="Spotify"] move to workspace 10
 # exec nm-applet
 exec --no-startup-id wicd-client --tray
 
-# open qute browser on startup
-exec --no-startup-id qutebrowser
-# open slack
-exec --no-startup-id slack
+# exec --no-startup-id qutebrowser
 # open spotify client
 exec --no-startup-id spotify
 
@@ -355,3 +357,14 @@ exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 
 # map capslock key to escape key
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+## All messaging apps on workstation 9
+# open slack
+exec --no-startup-id slack
+# start whatsweb 
+exec --no-startup-id brave-browser web.whatsapp.com
+for_window [title="WhatsApp - Brave"] move to workspace 9
+# open riot
+exec --no-startup-id riot-desktop
+
+exec --no-startup-id i3-msg 'workspace 9; layout tabbed'

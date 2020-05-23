@@ -47,7 +47,10 @@ alias alarm="~/dotfiles/scripts/alarm.sh"
 # tmux alias
 alias tmisc='tmux new -A -s misc'
 
-# youbot specific aliases
+# mutt
+alias mutt='mutt -F ~/.config/mutt/muttrc'
+
+# robot related aliases
 alias yb2='ssh robocup@192.168.1.120'
 alias yb2l='ssh -X robocup@192.168.1.120'
 alias yb4pc2='ssh -X robocup@youbot-brsu-4-pc2'
