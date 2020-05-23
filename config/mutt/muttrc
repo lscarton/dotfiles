@@ -1,0 +1,40 @@
+# vim: filetype=muttrc
+set sort = 'reverse-date'
+set include
+bind index,pager i noop
+bind index,pager g noop
+bind index j next-entry
+bind index k previous-entry
+bind attach <return> view-mailcap
+bind attach l view-mailcap
+bind editor <space> noop
+bind index G last-entry
+bind index gg first-entry
+bind pager,attach h exit
+bind pager j next-line
+bind pager k previous-line
+bind pager l view-attachments
+bind index D delete-message
+bind index U undelete-message
+bind index L limit
+bind index h noop
+bind index l display-message
+bind index <space> tag-entry
+macro browser h '<change-dir><kill-line>..<enter>' "Go to parent folder"
+bind browser l select-entry
+bind index,pager S sync-mailbox
+bind index,pager R group-reply
+bind index \031 previous-undeleted	# Mouse wheel
+bind index \005 next-undeleted		# Mouse wheel
+bind pager \031 previous-line		# Mouse wheel
+bind pager \005 next-line		# Mouse wheel
+bind editor <Tab> complete-query
+
+source ~/.config/mutt/color.muttrc
+
+macro index gs 'c=Sent<enter>' "Go to sent folder"
+macro index gi 'c=INBOX<enter>' "Go to Inbox folder"
+macro index gd 'c=Drafts<enter>' "Go to Drafts folder"
+macro index gt 'c=Trash<enter>' "Go to Trash folder"
+
+source ~/.config/mutt/locomotec

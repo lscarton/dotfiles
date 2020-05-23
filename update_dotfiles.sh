@@ -26,6 +26,7 @@ cp -r ~/.config/neofetch ./config
 cp -r ~/.config/rofi ./config
 cp -r ~/.config/ranger ./config
 cp -r ~/.config/zathura ./config
+cp -r ~/.config/mutt/*muttrc ./config/mutt
 
 # remove ranger history and bookmark
 rm ./config/ranger/history
