@@ -239,6 +239,8 @@ bindsym $mod+x move container to output right
 bindsym $mod+Shift+equal gaps inner current plus 10
 bindsym $mod+Shift+minus gaps inner current minus 10
 
+bindsym $mod+Shift+p exec --no-startup-id ~/dotfiles/scripts/passmenu
+
 
 
 ###########################################
@@ -328,7 +330,8 @@ for_window [class="Spotify"] move to workspace 10
 
 # wifi controller on startup
 # exec nm-applet
-exec --no-startup-id wicd-client --tray
+# exec --no-startup-id wicd-client
+exec --no-startup-id i3-msg 'workspace 8; exec wicd-client; exec urxvt'
 
 # exec --no-startup-id qutebrowser
 # open spotify client
