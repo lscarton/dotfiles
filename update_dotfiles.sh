@@ -7,6 +7,7 @@ cp ~/.zshrc ./zshrc
 cp ~/.source_list ./source_list
 cp ~/.Xdefaults ./Xdefaults
 cp ~/.vimrc ./vimrc
+cp ~/.tmux.conf ./tmux.conf
 
 rm -rf ./urxvt
 cp -r ~/.urxvt ./urxvt
