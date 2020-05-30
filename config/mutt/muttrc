@@ -37,4 +37,6 @@ macro index gi 'c=INBOX<enter>' "Go to Inbox folder"
 macro index gd 'c=Drafts<enter>' "Go to Drafts folder"
 macro index gt 'c=Trash<enter>' "Go to Trash folder"
 
+macro pager \co <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
 source ~/.config/mutt/locomotec
