@@ -11,10 +11,10 @@ export TERM=xterm-256color
 source /home/dharmin/anaconda3/etc/profile.d/conda.sh
 
 # ROS stuff 
-export ROBOT_ENV=empty-world
-export ROBOT=youbot-brsu-arm
-# export ROBOT_ENV=brsu-c025-sim
-# export ROBOT=youbot-brsu-1
+# export ROBOT_ENV=empty-world
+# export ROBOT=youbot-brsu-arm
+export ROBOT_ENV=brsu-c025-sim
+export ROBOT=youbot-brsu-4
 
 # use the previously chose catkin workspace
 source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
@@ -22,6 +22,7 @@ source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
 # ranger file browser related settings
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
+export BROWSER=brave-browser
 
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3

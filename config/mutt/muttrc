@@ -30,6 +30,16 @@ bind pager \031 previous-line		# Mouse wheel
 bind pager \005 next-line		# Mouse wheel
 bind editor <Tab> complete-query
 
+set delete
+unset confirmappend
+set quit = "ask-yes"
+
+# visual/looks
+set tilde
+set smart_wrap
+set markers = "no"
+set sleep_time = 0
+set fast_reply
 source ~/.config/mutt/color.muttrc
 
 macro index gs 'c=Sent<enter>' "Go to sent folder"
@@ -38,5 +48,12 @@ macro index gd 'c=Drafts<enter>' "Go to Drafts folder"
 macro index gt 'c=Trash<enter>' "Go to Trash folder"
 
 macro pager \co <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+# macro attach V <pipe-entry>'iconv -c --to-code=UTF8 > /tmp/mutt_mail.html'<enter><shell-escape>'$BROWSER /tmp/mutt_mail.html'<enter> 'Open html in browser'
+
+set mailcap_path = ~/.config/mutt/mailcap_muttrc
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+set signature = ~/.config/mutt/signature_muttrc
 
 source ~/.config/mutt/locomotec
