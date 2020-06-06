@@ -29,10 +29,9 @@ alias ....='cdls ../../..'
 alias .....='cdls ../../../..'
 
 # run ranger (with exiing to selected directory option)
-# alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.rangerdir; cd `cat $HOME/.rangerdir`'
+alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.lastdir; cd `cat $HOME/.lastdir`'
 
-alias rcd='cd `cat $HOME/.rangerdir`'
+alias lastcd='cd `cat $HOME/.lastdir`'
 
 # ping google's DNS
 alias p='ping 8.8.8.8'
@@ -67,4 +66,4 @@ alias export_bonnie='export ROS_MASTER_URI=http://192.168.22.105:11311'
 alias narko='ssh narko5@192.168.1.55'
 alias export_narko='export ROS_MASTER_URI=http://192.168.1.55:11311'
 alias jetson='ssh kelo@192.168.1.105'
-alias export_jetson='export ROS_MASTER_URI=http://192.168.1.105:11311; export ROS_IP=192.168.1.115'
+alias export_jetson='export ROS_MASTER_URI=http://192.168.1.105:11311; export ROS_IP=192.168.1.116'

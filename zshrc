@@ -93,4 +93,4 @@ zstyle :compinstall filename '/home/dharmin/.zshrc'
 # source zsh_aliases file
 source ~/dotfiles/aliases
 
-source ~/.source_list
+source ~/dotfiles/source_list

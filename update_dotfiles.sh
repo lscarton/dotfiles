@@ -2,13 +2,7 @@
 
 # update the dotfiles from different locations
 
-# Xdefaults, vimrc
-cp ~/.zshrc ./zshrc
-cp ~/.source_list ./source_list
-cp ~/.Xdefaults ./Xdefaults
-cp ~/.vimrc ./vimrc
-cp ~/.tmux.conf ./tmux.conf
-
+# urxvt folder with extensions
 rm -rf ./urxvt
 cp -r ~/.urxvt ./urxvt
 
