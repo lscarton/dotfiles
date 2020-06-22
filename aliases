@@ -1,5 +1,7 @@
 # zsh aliases
 
+alias :q='exit'
+
 alias sz='source $HOME/.zshrc'
 
 # colorise ls command
@@ -33,6 +35,9 @@ alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.lastdir;
 
 alias lastcd='cd `cat $HOME/.lastdir`'
 
+# open a file after choosing from fzf
+alias vf='vim $(fzf)'
+
 # ping google's DNS
 alias p='ping 8.8.8.8'
 
@@ -65,5 +70,9 @@ alias bonnie='ssh ropod@192.168.22.105'
 alias export_bonnie='export ROS_MASTER_URI=http://192.168.22.105:11311'
 alias narko='ssh narko5@192.168.1.55'
 alias export_narko='export ROS_MASTER_URI=http://192.168.1.55:11311'
-alias jetson='ssh kelo@192.168.1.105'
-alias export_jetson='export ROS_MASTER_URI=http://192.168.1.105:11311; export ROS_IP=192.168.1.116'
+alias jetson='ssh kelo@192.168.22.122'
+alias export_jetson='export ROS_MASTER_URI=http://192.168.22.122:11311; export ROS_IP=192.168.22.177'
+alias uvc='ssh ropod@192.168.22.194'
+alias export_uvc='export ROS_MASTER_URI=http://192.168.22.194:11311'
+alias uvc_lan='ssh ropod@192.168.1.102'
+alias export_uvc_lan='export ROS_MASTER_URI=http://192.168.1.102:11311; export ROS_IP=192.168.1.100'

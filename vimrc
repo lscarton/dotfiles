@@ -12,10 +12,16 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 colorscheme nord
+
+" map spacebar as leader key
+nnoremap <space> <nop>
+let mapleader=" "
 
 " my mappings
 :command! W w
@@ -31,11 +37,11 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 " mapping Tab and Shift+Tab to move among tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+" nnoremap <Tab> gt
+" nnoremap <S-Tab> gT
 
 " disable scroll using mouse
-set mouse=a
+" set mouse=a
 nmap <ScrollWheelUp> <nop>
 nmap <ScrollWheelDown> <nop>
 imap <ScrollWheelUp> <nop>
@@ -77,6 +83,11 @@ autocmd! bufwritepost .vimrc source %
 
 " Comment lines or blocks
 noremap <silent> <C-_> :Commentary<cr>
+" use // for c, cpp type files
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+" use # for cmake, Cmakelists.txt type files
+autocmd FileType cmake setlocal commentstring=#\ %s
+
 
 " Enable syntax highlighting
 syntax enable
@@ -225,20 +236,19 @@ let g:jedi#completions_command = "<C-N>"
 let g:jedi#show_call_signatures = "2"
 let g:jedi#show_call_signatures_delay = 1
 
-
-" Window
-nmap <leader>s<left>  :topleft  vnew<CR>
-nmap <leader>s<right> :botright vnew<CR>
-nmap <leader>s<up>    :topleft  new<CR>
-nmap <leader>s<down>  :botright new<CR>
+" fuzzy file finder (fzf) bindings
+nnoremap <leader>og :GFiles<CR>
+nnoremap <leader>of :Files<CR>
+nnoremap <leader>ob :Buffers<CR>
 
 " Move between spltis
-nmap <A-Up> :wincmd k<CR>
-nmap <A-Down> :wincmd j<CR>
-nmap <A-Left> :wincmd h<CR>
-nmap <A-Right> :wincmd l<CR>
+nmap <leader>k :wincmd k<CR>
+nmap <leader>j :wincmd j<CR>
+nmap <leader>h :wincmd h<CR>
+nmap <leader>l :wincmd l<CR>
 
-
+" open directory tree on left side
+nnoremap <leader>t :30Lexplore<CR>
 
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
