@@ -102,6 +102,9 @@ autocmd FileType * setlocal formatoptions+=c formatoptions+=r formatoptions-=o
 " enter the current millenium
 set nocompatible
 
+" hide buffers instead of closing when switching to another buffer
+set hidden
+
 " wildmenu for fuzzy file finding
 set wildmenu
 
@@ -240,6 +243,7 @@ let g:jedi#show_call_signatures_delay = 1
 nnoremap <leader>og :GFiles<CR>
 nnoremap <leader>of :Files<CR>
 nnoremap <leader>ob :Buffers<CR>
+nnoremap <leader><space> :b#<CR>
 
 " Move between spltis
 nmap <leader>k :wincmd k<CR>
