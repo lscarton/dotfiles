@@ -25,6 +25,12 @@ function cdls(){
     cd "$@" && ls
 }
 
+function git_pull_origin(){
+    git pull origin $(git branch 2> /dev/null | grep '\*' | awk '{print ($2)}')
+}
+
+alias gpo="git_pull_origin"
+
 # parent directories aliases
 alias ...='cdls ../..'
 alias ....='cdls ../../..'
@@ -46,6 +52,8 @@ alias pendrive='~/dotfiles/scripts/pendrive.sh'
 
 # alias for choosing workspace
 alias choose_catkin_ws='~/dotfiles/scripts/catkin_workspace_switcher.sh'
+
+alias cbt='catkin build --this'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -71,10 +79,12 @@ alias export_bonnie='export ROS_MASTER_URI=http://192.168.22.105:11311'
 alias narko='ssh narko5@192.168.1.55'
 alias export_narko='export ROS_MASTER_URI=http://192.168.1.55:11311'
 alias jetson='ssh kelo@192.168.22.122'
-alias export_jetson='export ROS_MASTER_URI=http://192.168.22.122:11311; export ROS_IP=192.168.22.177'
+alias export_jetson='export ROS_MASTER_URI=http://192.168.22.122:11311'
 alias uvc='ssh ropod@192.168.22.194'
 alias export_uvc='export ROS_MASTER_URI=http://192.168.22.194:11311'
-alias uvca='ssh ropod@192.168.22.122'
-alias export_uvca='export ROS_MASTER_URI=http://192.168.22.122:11311'
+alias uvca='ssh ropod@192.168.22.208'
+alias export_uvca='export ROS_MASTER_URI=http://192.168.22.208:11311'
 alias uvc_lan='ssh ropod@192.168.1.102'
-alias export_uvc_lan='export ROS_MASTER_URI=http://192.168.1.102:11311; export ROS_IP=192.168.1.100'
+alias export_uvc_lan='export ROS_MASTER_URI=http://192.168.1.102:11311'
+alias lucy='ssh lucy@192.168.50.201'
+alias export_lucy='export ROS_MASTER_URI=http://192.168.50.201:11311; export ROS_IP=192.168.50.3'

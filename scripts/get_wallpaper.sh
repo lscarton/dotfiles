@@ -5,6 +5,8 @@ fn_image='wallpaper.jpg'
 
 mkdir -p "$fn_basedir"
 
+notify-send -i "wallpaper" "Changing wallpaper..." -h string:x-canonical-private-synchronous:anything
+
 # Get page index
 wget -q "https://clients3.google.com/cast/chromecast/home" -O "${fn_basedir}${fn_index}" 
 if [ $? -ne 0 ]; then

@@ -219,7 +219,7 @@ let g:UltiSnipsEditSplit="tabdo"
 let g:ultisnips_python_style="sphinx"
 
 " Take out function preview from YCM
-" set completeopt-=preview
+set completeopt-=preview
 
 " YCM/Jedi-vim variables to work together
 " https://github.com/Valloric/YouCompleteMe/issues/234

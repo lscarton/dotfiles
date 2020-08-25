@@ -38,3 +38,5 @@ Make new partition on the newly formatted usb (source: https://askubuntu.com/a/5
   You will be prompted for the size of the partition.
   Making a primary partition when prompted, if you are not sure. Use default if not sure.
   Then press letter `w` to write table to disk and exit.
+
+- Format the newly created partition to make it easily mountable.

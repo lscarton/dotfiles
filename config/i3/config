@@ -201,7 +201,7 @@ bindsym $mod+Escape exec "~/dotfiles/scripts/pre_lock.sh; exec i3lock -i /tmp/sc
 # bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lock.png
 
 # open brave browser
-bindsym $mod+b exec --no-startup-id brave-browser
+bindsym $mod+b exec --no-startup-id brave-browser-beta
 
 # open qutebrowser
 bindsym $mod+c exec --no-startup-id qutebrowser
@@ -367,7 +367,7 @@ exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 # open slack
 exec --no-startup-id slack
 # start whatsweb 
-exec --no-startup-id brave-browser web.whatsapp.com
+exec --no-startup-id brave-browser-beta web.whatsapp.com
 for_window [title="WhatsApp - Brave"] move to workspace 9
 # open riot
 exec --no-startup-id riot-desktop
