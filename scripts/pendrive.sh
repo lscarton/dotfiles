@@ -13,7 +13,7 @@ if [ "$operation" = "Mount" ];then
     [[ "$chosen" = "" ]] && exit 1
 
     # get list of directories where the drive could be mounted
-    dirs=$(find /media -type d -mindepth 1 -maxdepth 2 2>/dev/null)
+    dirs=$(find /media /mnt 2>/dev/null)
     # ask user to select a mount point
     mountpoint=$(echo "$dirs" | rofi -dmenu -i -fn "Monospace-13" -p "Where do you want to mount "$chosen"?" )
     [[ "$mountpoint" = "" ]] && exit 1

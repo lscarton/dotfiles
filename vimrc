@@ -105,6 +105,9 @@ set nocompatible
 " hide buffers instead of closing when switching to another buffer
 set hidden
 
+" use every file in current dir and child dir while "find" ind
+set path=**
+
 " wildmenu for fuzzy file finding
 set wildmenu
 
