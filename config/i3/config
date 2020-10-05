@@ -150,8 +150,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # send container to left or right workspace
 bindsym $mod+control+Shift+Left exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh l
 bindsym $mod+control+Shift+Right exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh r
-bindsym $mod+control+Shift+j exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh l
-bindsym $mod+control+Shift+k exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh r
+bindsym $mod+Shift+n exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh l
+bindsym $mod+Shift+m exec --no-startup-id bash ~/dotfiles/scripts/send_next_workspace.sh r
 
 ##################################
 
@@ -322,6 +322,8 @@ assign [class="Slack"] 9
 
 assign [class="Riot"] 9
 
+assign [class="Sylpheed"] 9
+
 assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
 
@@ -371,5 +373,7 @@ exec --no-startup-id brave-browser-beta web.whatsapp.com
 for_window [title="WhatsApp - Brave"] move to workspace 9
 # open riot
 exec --no-startup-id riot-desktop
+# open mail client
+exec --no-startup-id sylpheed
 
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
