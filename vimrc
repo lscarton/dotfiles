@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
@@ -269,4 +270,8 @@ let g:netrw_browse_split=4 "open in prior window
 let g:netrw_altv=1          "open splits to the right
 let g:netrw_liststyle=3     "tree view
 
-autocmd FileType markdown nnoremap <c-p> :!pandoc -t html % -o preview.html && xdg-open preview.html<cr><cr>
+" markdown preview config
+nnoremap <leader>p :MarkdownPreview<CR>
+nnoremap <leader>ps :MarkdownPreviewStop<CR>
+let g:mkdp_refresh_slow=1
+let g:mkdp_auto_close=0
