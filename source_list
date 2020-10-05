@@ -16,7 +16,7 @@ export FZF_DEFAULT_COMMAND='find . -not \( -path "*/build/*" -prune \)\
                                    -not \( -path "*/logs/*" -prune \)\
                                    -not \( -path "*/\.*/*" -prune \)'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview 'head 20 {}'"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 
 # ROS stuff 
 # export ROBOT_ENV=empty-world
