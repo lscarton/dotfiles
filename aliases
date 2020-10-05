@@ -62,8 +62,7 @@ alias alarm="~/dotfiles/scripts/alarm.sh"
 # tmux alias
 alias tmisc='tmux new -A -s misc'
 
-# mutt
-alias mutt='mutt -F ~/.config/mutt/muttrc'
+alias lofi='cvlc --loop ~/Music/lofi_hiphop.mp3'
 
 # robot related aliases
 alias yb2='ssh robocup@192.168.1.120'
@@ -80,8 +79,8 @@ alias narko='ssh narko5@192.168.1.55'
 alias export_narko='export ROS_MASTER_URI=http://192.168.1.55:11311'
 alias jetson='ssh kelo@192.168.22.122'
 alias export_jetson='export ROS_MASTER_URI=http://192.168.22.122:11311'
-alias uvc='ssh ropod@192.168.22.194'
-alias export_uvc='export ROS_MASTER_URI=http://192.168.22.194:11311'
+# alias uvc='ssh ropod@192.168.22.194'
+# alias export_uvc='export ROS_MASTER_URI=http://192.168.22.194:11311'
 alias uvca='ssh ropod@192.168.22.208'
 alias export_uvca='export ROS_MASTER_URI=http://192.168.22.208:11311'
 alias uvc_lan='ssh ropod@192.168.1.102'
