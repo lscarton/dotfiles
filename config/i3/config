@@ -320,7 +320,7 @@ assign [class="Brave-browser"] 1
 
 assign [class="Slack"] 9
 
-assign [class="Riot"] 9
+assign [class="Element"] 9
 
 assign [class="Sylpheed"] 9
 
@@ -371,8 +371,8 @@ exec --no-startup-id slack
 # start whatsweb 
 exec --no-startup-id brave-browser-beta web.whatsapp.com
 for_window [title="WhatsApp - Brave"] move to workspace 9
-# open riot
-exec --no-startup-id riot-desktop
+# open elements
+exec --no-startup-id element-desktop
 # open mail client
 exec --no-startup-id sylpheed
 
