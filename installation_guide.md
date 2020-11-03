@@ -1,4 +1,10 @@
+# Installation Guide
+
 Add instructions for install i3 gaps
+
+```
+ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
+ln -s ~/dotfiles/config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
 
 ```
 sudo apt install ranger
@@ -9,6 +15,9 @@ sudo apt install rofi
 sudo apt install i3lock
 sudo apt install pulseaudio-utils
 sudo apt install xbacklight
+
+echo "/home/dharmin" > ~/.lastdir
+echo "1.0" > ~/.config/brightness
 
 # install playerctl
 wget http://ftp.nl.debian.org/debian/pool/main/p/playerctl/libplayerctl2_2.0.1-1_amd64.deb
@@ -42,7 +51,7 @@ sudo apt install brave-browser-beta
 ```
 sudo apt install sylpheed
 
-install and use zsh (logout and login for zsh to work)
+### install and use zsh (logout and login for zsh to work)
 ```
 sudo apt install zsh
 chsh -s /usr/bin/zsh
@@ -51,4 +60,13 @@ chsh -s /usr/bin/zsh
 sudo apt install neofetch
 ln -s ~/dotfiles/config/ranger ~/.config/ranger
 ln -s ~/dotfiles/urxvt ~/.urxvt
+```
+
+### setup vim
+```
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim ~/.vim
+vim
+:PlugInstall
+:qa
 ```

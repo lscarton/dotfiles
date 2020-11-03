@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation fetches from;
 " https://github.com/davidhalter/jedi-vim
 Plug 'davidhalter/jedi-vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
