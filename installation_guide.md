@@ -19,7 +19,7 @@ sudo apt install libxrandr2
 sudo apt install scrot
 
 ln -s ~/dotfiles/Xdefaults ~/.Xdefaults
-ln -s ~/dotfiles/config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
 
 sudo apt install jq
 sudo apt install feh
