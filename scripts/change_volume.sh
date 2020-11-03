@@ -1,13 +1,13 @@
 #!/bin/bash
 if [ "$1" = "up" ]
 then
-    pactl set-sink-volume 1 +5%
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
 elif [ "$1" = "down" ]
 then
-    pactl set-sink-volume 1 -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
 elif [ "$1" = "mute" ]
 then
-    pactl set-sink-mute 1 toggle # mute sound
+    pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 else
     notify-send -i dialog-error "Change volume" "Unknown argument"
 fi
@@ -31,4 +31,4 @@ else
         icon="audio-volume-medium"
     fi
 fi
-notify-send -i "$icon" "$s" "$volume_string" -h string:x-canonical-private-synchronous:anything
+notify-send -t 500 -i "$icon" "$s" "$volume_string" -h string:x-canonical-private-synchronous:anything
