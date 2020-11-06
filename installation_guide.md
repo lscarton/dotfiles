@@ -65,6 +65,7 @@ ln -s ~/dotfiles/urxvt ~/.urxvt
 
 ### setup vim
 ```
+sudo apt install vim-gnome
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim ~/.vim
 vim
@@ -74,6 +75,16 @@ vim
 
 ### brightness
 
+- install light from github
+- build and install
+
 ```
-xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1 > ~/.config/display_name
+sudo chmod s+u /usr/bin/light
 ```
+
+### screen tear and transparency
+
+```
+sudo apt install compton
+```
+log out and log back in
