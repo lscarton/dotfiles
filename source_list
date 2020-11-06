@@ -33,4 +33,4 @@ VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 export BROWSER=brave-browser
 
 # neofetch on start
-# neofetch --source ~/.config/neofetch/batman3
+neofetch --source ~/.config/neofetch/batman3

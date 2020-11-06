@@ -7,6 +7,7 @@ ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
 
 sudo apt install ranger
+ln -s ~/dotfiles/config/ranger ~/.config/ranger
 sudo apt install i3blocks
 sudo apt install rxvt-unicode-256color
 sudo apt install dmenu
@@ -59,7 +60,7 @@ chsh -s /usr/bin/zsh
 ```
 ```
 sudo apt install neofetch
-ln -s ~/dotfiles/config/ranger ~/.config/ranger
+ln -s ~/dotfiles/config/neofetch ~/.config/
 ln -s ~/dotfiles/urxvt ~/.urxvt
 ```
 
