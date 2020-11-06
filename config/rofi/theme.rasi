@@ -1,36 +1,36 @@
 * {
-    active-background: #11627C;
+    active-background: @background;
     active-foreground: @foreground;
-    normal-background: @background;
+    normal-background: transparent;
     normal-foreground: @foreground;
-    urgent-background: #0F556C;
+    urgent-background: @background;
     urgent-foreground: @foreground;
 
-    alternate-active-background: @background;
+    alternate-active-background: transparent;
     alternate-active-foreground: @foreground;
-    alternate-normal-background: @background;
+    alternate-normal-background: transparent;
     alternate-normal-foreground: @foreground;
-    alternate-urgent-background: @background;
+    alternate-urgent-background: transparent;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #0F556C;
+    selected-active-background: @background;
     selected-active-foreground: @foreground;
-    selected-normal-background: #11627C;
-    selected-normal-foreground: @foreground;
-    selected-urgent-background: #147290;
+    selected-normal-background: @foreground;
+    selected-normal-foreground: rgb(46, 52, 64, 90%);
+    selected-urgent-background: @background;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #84c6da;
-    foreground: #111112;
+    background: rgb(46, 52, 64, 20%);
+    foreground: rgb(129, 161, 193, 90%);
     border-color: @background;
-    spacing: 2;
+    spacing: 0;
 }
 
 #window {
     background-color: @background;
     border: 0;
-    padding: 2.5ch;
+    padding: 0.1ch;
 }
 
 #mainbox {
@@ -119,9 +119,9 @@ textbox-prompt-colon {
 }
 
 #scrollbar {
-    width: 4px;
+    width: 0px;
     border: 0;
-    handle-width: 8px;
+    handle-width: 0px;
     padding: 0;
 }
 
