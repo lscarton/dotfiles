@@ -258,6 +258,9 @@ nmap <leader>l :wincmd l<CR>
 " open directory tree on left side
 nnoremap <leader>t :30Lexplore<CR>
 
+" catkin build
+nnoremap <leader>cbt :terminal catkin build --this<CR>
+
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
 
