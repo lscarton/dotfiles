@@ -185,8 +185,7 @@ bindsym $mod+r mode "resize"
 ##########################
 
 # lock the system
-bindsym $mod+Escape exec "~/dotfiles/scripts/pre_lock.sh; exec i3lock -i /tmp/screenlock.png"
-# bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/lock.png
+bindsym $mod+Escape exec --no-startup-id "~/dotfiles/scripts/pre_lock.sh; exec i3lock -i /tmp/screenlock.png"
 
 # open brave browser
 bindsym $mod+b exec --no-startup-id brave-browser-beta
