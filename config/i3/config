@@ -224,7 +224,7 @@ bindsym $mod+Shift+minus gaps inner current minus 10
 
 bindsym $mod+Shift+p exec --no-startup-id ~/dotfiles/scripts/passmenu
 
-# bindsym $mod+Shift+w exec --no-startup-id ~/dotfiles/scripts/wlan.sh
+bindsym $mod+Shift+w exec --no-startup-id bash ~/dotfiles/scripts/wlan_nm.sh
 
 
 ###########################################
