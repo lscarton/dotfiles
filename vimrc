@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation fetches from;
 " https://github.com/davidhalter/jedi-vim
 Plug 'davidhalter/jedi-vim'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'lifepillar/vim-mucomplete'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -29,8 +29,6 @@ let mapleader=" "
 :command! Q q
 :command! WQ wq
 :command! Wq wq
-:command! YCMoff let g:ycm_auto_trigger=0
-:command! YCMon let g:ycm_auto_trigger=1
 :command! Label VimtexLabelsOpen
 
 " change cursor in different modes
@@ -215,22 +213,12 @@ let g:jedi#show_call_signatures = "2"
 "
 " Expand trigger
 "let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:ycm_key_list_previous_completion=['<Up>']
 let g:UltiSnipsExpandTrigger="<c-a>"
 " let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="tabdo"
 let g:ultisnips_python_style="sphinx"
 
-" Take out function preview from YCM
-set completeopt-=preview
-
-" YCM/Jedi-vim variables to work together
-" https://github.com/Valloric/YouCompleteMe/issues/234
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_use_ultisnips_completer = 1
-let g:ycm_seed_identifiers_with_syntax = 1
 
 let g:jedi#auto_initialization = 1
 "let g:jedi#completions_enabled = 0
@@ -260,6 +248,13 @@ nnoremap <leader>t :30Lexplore<CR>
 
 " catkin build
 nnoremap <leader>cbt :terminal catkin build --this<CR>
+
+" mucomplete settings
+set completeopt+=menuone,noselect
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:mucomplete#enable_auto_at_startup = 1
+
 
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
