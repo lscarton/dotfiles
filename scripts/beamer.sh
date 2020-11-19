@@ -1,10 +1,10 @@
 #!/bin/bash
 
-INTERNAL_OUTPUT="eDP1"
-EXTERNAL_OUTPUT="HDMI1"
+INTERNAL_OUTPUT="eDP-1"
+EXTERNAL_OUTPUT="HDMI-1-1"
 
 # Detect extenal monitor
-if [ `xrandr | grep HDMI1 | grep -c ' connected '` -eq 1 ]; then
+if [ `xrandr | grep $EXTERNAL_OUTPUT | grep -c ' connected '` -eq 1 ]; then
 
     choices="laptop\ndual\nexternal\nclone"
 
