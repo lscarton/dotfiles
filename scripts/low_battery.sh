@@ -14,8 +14,8 @@ while true; do
         then
             notify-send -i battery-low -u critical "LOW BATTERY" "$percentage"
         fi
-        sleep 15
-    else
         sleep 120
+    else
+        sleep 300
     fi
 done

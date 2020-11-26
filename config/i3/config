@@ -319,7 +319,7 @@ for_window [class="Spotify"] move to workspace 10
 exec nm-applet
  
 # open spotify client
-exec --no-startup-id spotify
+# exec --no-startup-id spotify
  
 # enable natural scrolling (like on a phone)
 exec --no-startup-id synclient VertScrollDelta=-111
