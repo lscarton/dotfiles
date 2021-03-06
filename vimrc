@@ -18,7 +18,8 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-colorscheme nord
+colorscheme onedark
+set background=dark
 
 " map spacebar as leader key
 nnoremap <space> <nop>
@@ -30,6 +31,8 @@ let mapleader=" "
 :command! WQ wq
 :command! Wq wq
 :command! Label VimtexLabelsOpen
+
+set confirm
 
 " change cursor in different modes
 let &t_SI = "\e[6 q"
@@ -114,11 +117,10 @@ set foldmethod=indent  " Default fold method
 " set the method for folding depending on language
 autocmd FileType c,cpp,java,scala set foldmethod=syntax
 autocmd FileType sh,ruby,python   set foldmethod=indent
-set foldmethod=indent   
 " level of nesting to fold
-set foldnestmax=4
-"set nofoldenable
-set foldlevel=1
+" set foldnestmax=0
+set nofoldenable
+" set foldlevel=0
 
 " Show line numbers
 set number
@@ -244,10 +246,14 @@ nmap <leader>h :wincmd h<CR>
 nmap <leader>l :wincmd l<CR>
 
 " open directory tree on left side
-nnoremap <leader>t :30Lexplore<CR>
+nnoremap <leader>t :20Lexplore<CR>
 
 " catkin build
 nnoremap <leader>cbt :terminal catkin build --this<CR>
+
+" find go to next/previous underscore
+nnoremap <leader>f f_
+nnoremap <leader>F F_
 
 " mucomplete settings
 set completeopt+=menuone,noselect
@@ -261,6 +267,7 @@ let g:tex_flavor='latex'
 
 " opens pdf file using zathura
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_open_on_warning = 0
 
 " netrw file browsing
 let g:netrw_banner=0 " hide banner
