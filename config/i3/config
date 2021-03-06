@@ -215,8 +215,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+p exec --no-startup-id bash ~/dotfiles/scripts/beamer.sh 
 
 # Screen shot
-bindsym --release Print exec --no-startup-id scrot ~/Pictures/Screenshots/Screenshot_from_%F_%T.png
-bindsym --release Shift+Print exec --no-startup-id scrot -s ~/Pictures/Screenshots/Screenshot_from_%F_%T_cropped.png
+bindsym --release Print exec --no-startup-id bash ~/dotfiles/scripts/screenshot.sh
+bindsym --release Shift+Print exec --no-startup-id bash ~/dotfiles/scripts/screenshot.sh crop
 
 # move a container to screen on the right
 bindsym $mod+x move container to output right
@@ -329,7 +329,7 @@ exec --no-startup-id synclient VertScrollDelta=-111
 # exec --no-startup-id synclient VertScrollDelta=117
  
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/blue_material_design.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
  
 # to locate the access point(AP) name. 
 # nmcli dev wifi 
