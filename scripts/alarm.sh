@@ -21,6 +21,6 @@ elif [[ $1 == "-d" ]]; then
 else
     echo "use either -t (time in HH:MM) or -d (duration in sleep command format) option"
     echo "Example:"
-    echo "    -t 5m 5s"
-    echo "    -d 15:55"
+    echo "    -t 15:55"
+    echo "    -d 5m 5s"
 fi
