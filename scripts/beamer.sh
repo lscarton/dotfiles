@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INTERNAL_OUTPUT="eDP-1"
-EXTERNAL_OUTPUT="HDMI-1-1"
+INTERNAL_OUTPUT="eDP-1-1"
+EXTERNAL_OUTPUT="HDMI-0"
 
 # Detect extenal monitor
 if [ `xrandr | grep $EXTERNAL_OUTPUT | grep -c ' connected '` -eq 1 ]; then
