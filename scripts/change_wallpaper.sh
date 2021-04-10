@@ -1,8 +1,6 @@
-#!bin/sh
+#!/bin/bash
+wallpaperdir="$HOME/Pictures/Wallpapers"
 
-case $BLOCK_BUTTON in 
-    1) bash ~/dotfiles/scripts/get_wallpaper.sh;;
-    3) feh --bg-scale ~/Pictures/Wallpapers/blue_material_design.jpg;;
-esac
+randompic=$(find $wallpaperdir -maxdepth 1 -type f | shuf -n1)
 
-echo "WP"
+feh --bg-scale "$randompic"
