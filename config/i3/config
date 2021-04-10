@@ -321,7 +321,7 @@ for_window [class="Spotify"] move to workspace 10
 exec nm-applet
  
 # open spotify client
-# exec --no-startup-id spotify
+exec --no-startup-id spotify
  
 # enable natural scrolling (like on a phone)
 exec --no-startup-id synclient VertScrollDelta=-111
@@ -356,7 +356,7 @@ for_window [title="WhatsApp - Brave"] move to workspace 9
 # open elements
 exec --no-startup-id element-desktop
 # open mail client
-exec --no-startup-id sylpheed
+exec --no-startup-id thunderbird
  
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
 
