@@ -89,3 +89,13 @@ sudo chmod s+u /usr/bin/light
 sudo apt install compton
 ```
 log out and log back in
+
+### Change wallpapers using cron
+
+execute `crontab -e`
+Add this at the last line
+
+```
+*/1 * * * * /bin/bash /home/USER/dotfiles/scripts/change_wallpaper.sh >/tmp/wallpaper_cronjob.log 2>&1
+```
+
