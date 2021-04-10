@@ -37,7 +37,8 @@ alias ....='cdls ../../..'
 alias .....='cdls ../../../..'
 
 # run ranger (with exiing to selected directory option)
-alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.lastdir; cd `cat $HOME/.lastdir`'
+# alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.lastdir; cd `cat $HOME/.lastdir`'
+alias r='. ranger'
 
 alias lastcd='cd `cat $HOME/.lastdir`'
 
@@ -85,3 +86,5 @@ alias uvc_nuc_2='ssh kelo@192.168.1.106'
 alias export_uvc_nuc_2='export ROS_MASTER_URI=http://192.168.1.106:11311'
 alias lucy='ssh lucy@192.168.50.201'
 alias export_lucy='export ROS_MASTER_URI=http://192.168.50.201:11311; export ROS_IP=192.168.50.3'
+alias kelo3='ssh -p 8006 kelo@git.ropod.org'
+alias export_kelo3='export ROS_MASTER_URI=http://kelo3:11311'
