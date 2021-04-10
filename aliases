@@ -40,8 +40,6 @@ alias .....='cdls ../../../..'
 # alias r='echo "Starting Ranger file manager"; ranger --choosedir=$HOME/.lastdir; cd `cat $HOME/.lastdir`'
 alias r='. ranger'
 
-alias lastcd='cd `cat $HOME/.lastdir`'
-
 # open a file after choosing from fzf
 alias vf='vim $(fzf)'
 
