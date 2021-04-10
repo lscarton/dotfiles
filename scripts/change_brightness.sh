@@ -2,16 +2,16 @@
 
 if [ "$1" = "up" ]
 then
-    light -A 2%
+    light -A 1%
     if [ "$2" = "big" ]
     then
-        light -A 8%
+        light -A 9%
     fi
 else
-    light -U 2%
+    light -U 1%
     if [ "$2" = "big" ]
     then
-        light -U 8%
+        light -U 9%
     fi
 fi
 
