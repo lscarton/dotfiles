@@ -31,6 +31,7 @@ let mapleader=" "
 :command! WQ wq
 :command! Wq wq
 :command! Label VimtexLabelsOpen
+:command! RemoveWhiteSpace %s/\s\+$//e
 
 set confirm
 
@@ -280,3 +281,5 @@ nnoremap <leader>p :MarkdownPreview<CR>
 nnoremap <leader>ps :MarkdownPreviewStop<CR>
 let g:mkdp_refresh_slow=1
 let g:mkdp_auto_close=0
+
+hi Normal guibg=NONE ctermbg=NONE
