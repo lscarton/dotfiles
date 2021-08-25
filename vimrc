@@ -14,7 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'iamcco/markdown-preview.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
@@ -32,6 +31,7 @@ let mapleader=" "
 :command! Wq wq
 :command! Label VimtexLabelsOpen
 :command! RemoveWhiteSpace %s/\s\+$//e
+:command! SlowCompletion let g:mucomplete#completion_delay=1
 
 set confirm
 
@@ -235,6 +235,9 @@ let g:jedi#show_call_signatures = "2"
 let g:jedi#show_call_signatures_delay = 1
 
 " fuzzy file finder (fzf) bindings
+autocmd VimEnter * command! -bang -nargs=? GFiles call fzf#vim#gitfiles(<q-args>, {'options': '--no-preview'}, <bang>0)
+autocmd VimEnter * command! -bang -nargs=? Files call fzf#vim#files(<q-args>, {'options': '--no-preview'}, <bang>0)
+autocmd VimEnter * command! -bang -nargs=? Buffers call fzf#vim#buffers(<q-args>, {'options': '--no-preview'}, <bang>0)
 nnoremap <leader>og :GFiles<CR>
 nnoremap <leader>of :Files<CR>
 nnoremap <leader>ob :Buffers<CR>
@@ -262,7 +265,6 @@ set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
 
-
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
 
@@ -276,10 +278,7 @@ let g:netrw_browse_split=4 "open in prior window
 let g:netrw_altv=1          "open splits to the right
 let g:netrw_liststyle=3     "tree view
 
-" markdown preview config
-nnoremap <leader>p :MarkdownPreview<CR>
-nnoremap <leader>ps :MarkdownPreviewStop<CR>
-let g:mkdp_refresh_slow=1
-let g:mkdp_auto_close=0
+" autocmd BufWritePost *.md silent! !pandoc <afile> -o /tmp/myFile.pdf
+autocmd BufWritePost *.md !pandoc <afile> -o /tmp/myFile.pdf
 
 hi Normal guibg=NONE ctermbg=NONE
