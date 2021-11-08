@@ -27,7 +27,7 @@ let mapleader=" "
 :command! Q q
 :command! WQ wq
 :command! Wq wq
-:command! Label VimtexLabelsOpen
+:command! Toc VimtexTocOpen
 :command! RemoveWhiteSpace %s/\s\+$//e
 :command! SlowCompletion let g:mucomplete#completion_delay=1
 
@@ -241,6 +241,9 @@ nnoremap <leader>cbt :terminal catkin build --this<CR>
 " find go to next/previous underscore
 nnoremap <leader>f f_
 nnoremap <leader>F F_
+
+" search for selected text
+vnoremap // y/<C-R>"<CR>
 
 " mucomplete settings
 set completeopt+=menuone,noselect
