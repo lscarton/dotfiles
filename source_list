@@ -24,6 +24,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 # export ROBOT_ENV=brsu-c025-sim
 # export ROBOT=youbot-brsu-4
 export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
+# roslaunch gbot robot.launch |& tee /home/ropod/.ros/kelo/log/real_robot_launch_\$(date +%F_%T).log
 
 # use the previously chose catkin workspace
 source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
