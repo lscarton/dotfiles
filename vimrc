@@ -2,8 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation fetches from;
-" https://github.com/davidhalter/jedi-vim
-Plug 'davidhalter/jedi-vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -207,32 +205,17 @@ set timeoutlen=1000 ttimeoutlen=0
        \ },
        \ }
 
-" Minimal configuration for jedi-vim
-let g:jedi#show_call_signatures = "2"
-"autocmd FileType python setlocal completeopt-=preview
-
 " Allow tab-completion for directories
 "let g:SuperTabDefaultCompletionType = "context"
 "
 " Expand trigger
 "let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsExpandTrigger="<c-b>"
 " let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="tabdo"
 let g:ultisnips_python_style="sphinx"
 
-
-let g:jedi#auto_initialization = 1
-"let g:jedi#completions_enabled = 0
-" this enables auto-complete from imports with ctrl-o
-let g:jedi#completions_enabled = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#smart_auto_mappings = 1
-let g:jedi#popup_on_dot = 1
-let g:jedi#completions_command = "<C-N>"
-let g:jedi#show_call_signatures = "2"
-let g:jedi#show_call_signatures_delay = 1
 
 " fuzzy file finder (fzf) bindings
 autocmd VimEnter * command! -bang -nargs=? GFiles call fzf#vim#gitfiles(<q-args>, {'options': '--no-preview'}, <bang>0)
