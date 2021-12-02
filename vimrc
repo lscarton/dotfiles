@@ -265,6 +265,6 @@ let g:netrw_altv=1          "open splits to the right
 let g:netrw_liststyle=3     "tree view
 
 " autocmd BufWritePost *.md silent! !pandoc <afile> -o /tmp/myFile.pdf
-autocmd BufWritePost *.md !pandoc <afile> -o /tmp/myFile.pdf
+" autocmd BufWritePost *.md !pandoc <afile> -o /tmp/myFile.pdf
 
 hi Normal guibg=NONE ctermbg=NONE
