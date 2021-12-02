@@ -80,7 +80,7 @@ vim
 - build and install
 
 ```
-sudo chmod s+u /usr/bin/light
+sudo chmod +s /usr/bin/light
 ```
 
 ### screen tear and transparency
@@ -99,3 +99,27 @@ Add this at the last line
 */1 * * * * /bin/bash /home/USER/dotfiles/scripts/change_wallpaper.sh >/tmp/wallpaper_cronjob.log 2>&1
 ```
 
+### Additional software
+
+```
+sudo apt install mpv
+sudo apt install thunderbird
+sudo snap install spotify
+sudo snap install skype
+sudo apt install zathura
+sudo apt install simplescreenrecorder
+sudo apt install wireguardtools
+sudo apt install tmux
+```
+
+install zoom
+
+### Element riot messenger
+
+```
+sudo apt install -y wget apt-transport-https
+sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
+sudo apt update
+sudo apt install element-desktop
+```
