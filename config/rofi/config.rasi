@@ -1,0 +1,9 @@
+configuration {
+	width: 30;
+	lines: 10;
+	font: "mono 16";
+	bw: 0;
+	hide-scrollbar: true;
+	fake-transparency: true;
+	theme: "~/dotfiles/config/rofi/theme.rasi";
+}
