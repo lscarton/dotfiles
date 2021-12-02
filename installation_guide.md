@@ -110,6 +110,8 @@ sudo apt install zathura
 sudo apt install simplescreenrecorder
 sudo apt install wireguardtools
 sudo apt install tmux
+sudo apt install htop
+sudo apt install tree
 ```
 
 install zoom
