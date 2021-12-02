@@ -320,10 +320,12 @@ exec nm-applet
 # open spotify client
 exec --no-startup-id spotify
  
+# enable tapping as click
+ exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
 # enable natural scrolling (like on a phone)
-exec --no-startup-id synclient VertScrollDelta=-111
-# enable default scrolling
-# exec --no-startup-id synclient VertScrollDelta=117
+ exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Natural Scrolling Enabled" 1
+# enable middle mouse click (three finger tap)
+ exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Middle Emulation Enabled" 1
  
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
