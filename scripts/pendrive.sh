@@ -24,7 +24,7 @@ if [ "$operation" = "Mount" ];then
     fi
 
     # mount chosen drive to the chosen mountpoint
-    sudo mount $chosen $mountpoint && notify-send "$chosen mounted to $mountpoint"
+    sudo mount -o umask=0022,uid=1000,gid=1000 $chosen $mountpoint && notify-send "$chosen mounted to $mountpoint"
 else
     # get unmountable drives from lsblk command and exclude /, /home and /boot from that list
     exclusionregex="\(/boot\|/home\|/\)$"
