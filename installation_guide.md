@@ -109,9 +109,19 @@ sudo snap install skype
 sudo apt install zathura
 sudo apt install simplescreenrecorder
 sudo apt install wireguardtools
+sudo apt install resolvconf
 sudo apt install tmux
 sudo apt install htop
 sudo apt install tree
+sudo apt install gimp
+sudo apt install libreoffice
+sudo apt install w3m
+sudo apt install python-pip
+sudo apt install nmap
+sudo apt install xclip
+sudo apt install python-rosdep
+sudo apt install texlive-full
+sudo apt install latexmk
 ```
 
 install zoom
