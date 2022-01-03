@@ -108,7 +108,7 @@ sudo snap install spotify
 sudo snap install skype
 sudo apt install zathura
 sudo apt install simplescreenrecorder
-sudo apt install wireguardtools
+sudo apt install wireguard-tools
 sudo apt install resolvconf
 sudo apt install tmux
 sudo apt install htop
