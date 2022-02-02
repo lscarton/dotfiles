@@ -58,8 +58,8 @@ setopt completealiases
 
 # history related settings
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory 
 # prevent duplicate lines in history
 setopt hist_save_no_dups
