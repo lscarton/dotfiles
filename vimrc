@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'takac/vim-hardtime'
 call plug#end()
 
 colorscheme onedark
@@ -36,10 +37,6 @@ set confirm
 " change cursor in different modes
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-
-" mapping Tab and Shift+Tab to move among tabs
-" nnoremap <Tab> gt
-" nnoremap <S-Tab> gT
 
 " disable scroll using mouse
 " set mouse=a
@@ -205,16 +202,13 @@ set timeoutlen=1000 ttimeoutlen=0
        \ },
        \ }
 
-" Allow tab-completion for directories
-"let g:SuperTabDefaultCompletionType = "context"
-"
 " Expand trigger
 "let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsExpandTrigger="<c-b>"
 " let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
-let g:UltiSnipsEditSplit="tabdo"
-let g:ultisnips_python_style="sphinx"
+" let g:UltiSnipsEditSplit="tabdo"
+" let g:ultisnips_python_style="sphinx"
 
 
 " fuzzy file finder (fzf) bindings
@@ -247,6 +241,7 @@ vnoremap // y/<C-R>"<CR>
 
 " mucomplete settings
 set completeopt+=menuone,noselect
+set completeopt-=preview
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 let g:mucomplete#enable_auto_at_startup = 1
@@ -266,5 +261,16 @@ let g:netrw_liststyle=3     "tree view
 
 " autocmd BufWritePost *.md silent! !pandoc <afile> -o /tmp/myFile.pdf
 " autocmd BufWritePost *.md !pandoc <afile> -o /tmp/myFile.pdf
+
+" vim-hardtime settings
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l"]
+let g:list_of_visual_keys = ["h", "j", "k", "l"]
+let g:list_of_insert_keys = []
+let g:list_of_disabled_keys = []
+let g:hardtime_timeout = 500
+let g:hardtime_ignore_buffer_patterns = ["index"]
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
 
 hi Normal guibg=NONE ctermbg=NONE
