@@ -33,8 +33,6 @@ source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 export BROWSER=brave-browser
-export LC_NUMERIC="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
 
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3
