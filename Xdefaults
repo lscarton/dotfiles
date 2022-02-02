@@ -38,4 +38,4 @@ URxvt.matcher.button:	1
 ! =========
 i3wm.background: nord0
 i3wm.foreground: nord4
-i3wm.fadeColor: nord3
+/* i3wm.fadeColor: nord3 */
