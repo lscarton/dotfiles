@@ -338,10 +338,14 @@ exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
 # nmcli device wifi connect APname password
  
 # to solve screen tear problem
-exec --no-startup-id compton --backend glx --vsync
+# exec --no-startup-id compton --backend glx --vsync
+exec --no-startup-id compton -cGf -I 0.07 -O 0.07 -i 0.98 -r 18 --backend glx --xrender-sync-fence
 # 
 # # battery notifiction
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
+
+# start i3 alternating layout
+exec_always --no-startup-id ~/.i3-alternating-layout/alternating_layouts.py
   
 # turn touchpad on
 #synclient TouchpadOff=0
