@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation fetches from;
-Plug 'lifepillar/vim-mucomplete'
+Plug 'ackyshake/VimCompletesMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -30,7 +30,6 @@ let mapleader=" "
 :command! Wq wq
 :command! Toc VimtexTocOpen
 :command! RemoveWhiteSpace %s/\s\+$//e
-:command! SlowCompletion let g:mucomplete#completion_delay=1
 
 set confirm
 
@@ -239,12 +238,11 @@ nnoremap <leader>F F_
 " search for selected text
 vnoremap // y/<C-R>"<CR>
 
-" mucomplete settings
-set completeopt+=menuone,noselect
-set completeopt-=preview
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
-let g:mucomplete#enable_auto_at_startup = 1
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+set completeopt=menu,menuone,longest
 
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
@@ -269,7 +267,7 @@ let g:list_of_visual_keys = ["h", "j", "k", "l"]
 let g:list_of_insert_keys = []
 let g:list_of_disabled_keys = []
 let g:hardtime_timeout = 500
-let g:hardtime_ignore_buffer_patterns = ["index"]
+let g:hardtime_ignore_buffer_patterns = ["index", ".*\.txt"]
 let g:hardtime_allow_different_key = 1
 let g:hardtime_maxcount = 2
 
