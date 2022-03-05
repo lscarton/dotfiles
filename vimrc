@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation fetches from;
-Plug 'ackyshake/VimCompletesMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -12,8 +11,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'takac/vim-hardtime'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
 
 colorscheme onedark
@@ -120,8 +119,8 @@ set nofoldenable
 " Show line numbers
 set number
 
-" relative line numbering
-set rnu
+" Show relative line numbers
+set relativenumber
 
 " Set tabs width to 4, it is still \t
 set tabstop=4
@@ -202,12 +201,8 @@ set timeoutlen=1000 ttimeoutlen=0
        \ }
 
 " Expand trigger
-"let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsExpandTrigger="<c-b>"
-" let g:UltiSnipsSnippetsDir="~/.vim/snippets"
 let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
-" let g:UltiSnipsEditSplit="tabdo"
-" let g:ultisnips_python_style="sphinx"
 
 
 " fuzzy file finder (fzf) bindings
@@ -238,11 +233,37 @@ nnoremap <leader>F F_
 " search for selected text
 vnoremap // y/<C-R>"<CR>
 
+" Autocomplete
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
-
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 set completeopt=menu,menuone,longest
+inoremap <silent> <expr> <Tab> SimpleAutoComplete(0)
+inoremap <silent> <expr> <S-Tab> SimpleAutoComplete(1)
+
+function! SimpleAutoComplete(is_backwards)
+    let directions = ["\<C-n>", "\<C-p>"]
+    let indent_directions = ["\<Tab>", "\<C-h>"]
+    let direction_index = a:is_backwards ? 1 : 0
+    if pumvisible() " if completion menu is visible just cycle through it
+        return directions[direction_index]
+    endif
+
+    " get the current line as string (excluding empty spaces and tabs)
+    let pos = getpos('.') " get cursor position return a list (buff, row, col)
+    let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
+
+    " Indent/De-indent if current line is empty string
+    if empty(substr)
+        return indent_directions[direction_index]
+    endif
+
+    if match(substr, '\/') != -1 " if the line contains a '/' do file path completion
+        return "\<C-x>\<C-f>" . directions[direction_index]
+    endif
+
+    return directions[direction_index] " normal completion compl-generic
+endfunction
 
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
