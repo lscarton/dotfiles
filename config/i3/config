@@ -338,8 +338,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
 # nmcli device wifi connect APname password
  
 # to solve screen tear problem
-# exec --no-startup-id compton --backend glx --vsync
-exec --no-startup-id compton -cGf -I 0.07 -O 0.07 -i 0.98 -r 18 --backend glx --xrender-sync-fence
+exec --no-startup-id compton -cGf -I 0.07 -O 0.07 -i 0.98 -r 18 --backend glx --vsync
 # 
 # # battery notifiction
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
