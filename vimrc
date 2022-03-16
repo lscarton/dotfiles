@@ -206,12 +206,12 @@ let g:UltiSnipsSnippetsDirectories=[$HOME.'/.vim/UltiSnips']
 
 
 " fuzzy file finder (fzf) bindings
-autocmd VimEnter * command! -bang -nargs=? GFiles call fzf#vim#gitfiles(<q-args>, {'options': '--no-preview'}, <bang>0)
-autocmd VimEnter * command! -bang -nargs=? Files call fzf#vim#files(<q-args>, {'options': '--no-preview'}, <bang>0)
-autocmd VimEnter * command! -bang -nargs=? Buffers call fzf#vim#buffers(<q-args>, {'options': '--no-preview'}, <bang>0)
+let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 nnoremap <leader>og :GFiles<CR>
 nnoremap <leader>of :Files<CR>
 nnoremap <leader>ob :Buffers<CR>
+nnoremap <leader>or :Rg<CR>
+nnoremap <leader>ot :Tags<CR>
 nnoremap <leader><space> :b#<CR>
 
 " Move between spltis
@@ -264,6 +264,19 @@ function! SimpleAutoComplete(is_backwards)
 
     return directions[direction_index] " normal completion compl-generic
 endfunction
+
+function! SwitchSourceHeader()
+    let file_extension = expand("%:e")
+    if ( file_extension == "cpp")
+        find %:t:r.h
+    elseif ( file_extension == "h" )
+        find %:t:r.cpp
+    else
+        echom "Switching does not support ." . file_extension
+    endif
+endfunction
+
+nnoremap <leader>os :call SwitchSourceHeader()<CR>
 
 " needed so that the snippets recognize .tex files
 let g:tex_flavor='latex'
