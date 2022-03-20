@@ -49,8 +49,7 @@ vmap <ScrollWheelDown> <nop>
 set scrolloff=5
 
 " Vim loads indentation and plugins acc. to detected filetype
-"filetype plugin indent on
-filetype plugin on
+filetype plugin indent on
 
 " Vim jumps to last position when reopening a file
 if has("autocmd")
@@ -58,7 +57,6 @@ if has("autocmd")
 endif
 
 " Run current script in python with F5
-" nnoremap <F5> :! python %<cr>
 nnoremap <F5> :! python3 %<cr>
 
 " Set spell check"
@@ -77,13 +75,13 @@ vnoremap <C-v> "+p
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Comment lines or blocks
-noremap <silent> <C-_> :Commentary<cr>
 " use // for c, cpp type files
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 " use # for cmake, Cmakelists.txt type files
 autocmd FileType cmake setlocal commentstring=#\ %s
 
+" Enable backspace to work normally
+set backspace=start,eol,indent
 
 " Enable syntax highlighting
 syntax enable
@@ -134,11 +132,11 @@ set expandtab|retab
 " Indent when moving to the next line while writing code
 set autoindent
 
-" Show the matching part of the pair for [] {} and ()
-set showmatch
-
 " setting smart indentation
 set smartindent
+
+" Show the matching part of the pair for [] {} and ()
+set showmatch
 
 " set color column
 hi ColorColumn ctermbg=darkgrey guibg=lightgrey
@@ -165,9 +163,12 @@ let python_highlight_all = 1
 vnoremap < <gv
 vnoremap > >gv
 
-" Make search case insensitive
+" highlight search
 set hlsearch
+
+" include search (highlights while typing the search pattern)
 set incsearch
+" Make search case insensitive
 set ignorecase
 set smartcase
 
