@@ -32,7 +32,7 @@ source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
 # ranger file browser related settings
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
-export BROWSER=brave-browser
+export BROWSER=brave-browser-beta
 
 # neofetch on start
 neofetch --source ~/.config/neofetch/batman3
