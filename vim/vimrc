@@ -33,8 +33,9 @@ set backspace=start,eol,indent
 syntax enable
 
 " make hidden characters like tabs or EOL visible
-set listchars=nbsp:_,trail:.,tab:▸\ ,eol:¬
-" set list
+" set listchars=nbsp:_,trail:.,tab:▸\ ,eol:¬
+set listchars=nbsp:_,trail:.,tab:▸\ 
+set list
 
 " disable auto-commenting when entering new line
 autocmd FileType * setlocal formatoptions+=c formatoptions+=r formatoptions-=o
@@ -152,8 +153,9 @@ nmap <leader>l :wincmd l<CR>
 " open directory tree on left side
 nnoremap <leader>t :20Lexplore<CR>
 
-" catkin build
-nnoremap <leader>cbt :terminal catkin build --this<CR>
+nnoremap <leader>cbt :terminal bash -c "catkin build --this"<CR>
+nnoremap <leader>B :terminal bash -x .editor/build_cmd<CR>
+nnoremap <leader>T :terminal bash -x .editor/test_cmd<CR>
 
 " find go to next/previous underscore
 nnoremap <leader>f f_
@@ -161,6 +163,7 @@ nnoremap <leader>F F_
 
 " search for selected text
 vnoremap // y/<C-R>"<CR>
+
 
 
 
@@ -188,9 +191,10 @@ source ~/.vim/plugins/lightline.vim
 source ~/.vim/plugins/vim-hardtime.vim
 source ~/.vim/plugins/vimtex.vim
 source ~/.vim/plugins/DoxygenToolkit.vim
-source ~/.vim/plugins/my-autocomplete.vim
-source ~/.vim/plugins/switch-source-header.vim
-source ~/.vim/plugins/netrw-settings.vim
+source ~/.vim/plugins/my_autocomplete.vim
+source ~/.vim/plugins/switch_source_header.vim
+source ~/.vim/plugins/netrw_settings.vim
+source ~/.vim/plugins/tag_managment.vim
 call plug#end()
 
 
@@ -201,6 +205,6 @@ call plug#end()
 " =============================================================================
 
 colorscheme onedark
-set background=dark
+" set background=dark
 " transparent background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
