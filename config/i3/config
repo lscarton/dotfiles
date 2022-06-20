@@ -304,7 +304,9 @@ assign [class="Slack"] 9
 
 assign [class="Element"] 9
 
-assign [class="Sylpheed"] 9
+assign [class="Thunderbird"] 9
+
+assign [class="Skype"] 9
 
 assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
@@ -312,6 +314,10 @@ for_window [class="Spotify"] move to workspace 10
 for_window [title="WhatsApp - Brave"] move to workspace 9
 
 for_window [title="Spotify – Web Player - Brave"] move to workspace 10
+
+assign [class="rviz"] 3
+
+assign [class="gazebo"] 3
 
 ########################################
 # Startup applications
@@ -321,7 +327,7 @@ for_window [title="Spotify – Web Player - Brave"] move to workspace 10
 exec nm-applet
  
 # open spotify client
-# exec --no-startup-id spotify
+exec --no-startup-id spotify
  
 # enable tapping as click
  exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
@@ -364,6 +370,7 @@ exec --no-startup-id thunderbird
  
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
 
-exec --no-startup-id brave-browser-beta --new-window open.spotify.com
+# exec --no-startup-id brave-browser-beta --new-window open.spotify.com
 # change keyboard layouts
-# exec --no-startup-id setxkbmap us,de -option 'grp:alt_shift_toggle'
+# exec "setxkbmap -layout us,de"
+# exec setxkbmap -option 'grp:alt_shift_toggle'
