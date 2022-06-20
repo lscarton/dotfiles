@@ -13,7 +13,7 @@ function git_stuff(){
     fi
 }
 PROMPT='
-%F{blue}%S[ %B%1~%b%F{blue} ]%s▶%f '
+%F{blue}%S %B%1~%b%F{blue} %s ▶%f '
 RPROMPT='$(git_stuff)'
 
 # reevaluate prompt every time
