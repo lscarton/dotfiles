@@ -19,10 +19,13 @@ function! GenerateTags()
     echom "Updated Tags!"
 endfunction
 
-nnoremap <leader>tj g<C-]>
-nnoremap <leader>tn :tnext
-nnoremap <leader>tp :tprevious
-nnoremap <leader>ct :call GenerateTags()<CR>
+" nnoremap <leader>tj g<C-]>
+nnoremap <leader>tj :call fzf#vim#tags('^' . expand('<cword>') . ' ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
+nnoremap <leader>tgd :call fzf#vim#tags('^' . expand('<cword>') . ' .h ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
+nnoremap <leader>tgf :call fzf#vim#tags('^' . expand('<cword>') . ' .cpp ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
+nnoremap <leader>tn :tnext<CR>
+nnoremap <leader>tp :tprevious<CR>
+nnoremap <leader>tu :call GenerateTags()<CR>
 
 if ( isdirectory('.editor') )
     :set tags=.editor/tags

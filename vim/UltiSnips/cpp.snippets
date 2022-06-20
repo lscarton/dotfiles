@@ -5,6 +5,33 @@ for ( size_t ${2:i} = 0; $2 < ${1:count}; $2${3:++} )
 }
 endsnippet
 
+snippet fore
+for ( ${1:const Object&} : ${2:container} )
+{
+	${3}
+}
+endsnippet
+
+snippet fori
+for ( ${3:auto} ${2:itr} = ${1:container}.begin(); $2 != $1.end(); $2 ++ )
+{
+	${4}
+}
+endsnippet
+
+snippet ns
+namespace ${1:my_ns} {
+${2}
+} // namespace $1
+endsnippet
+
+snippet header
+#ifndef ${1:HEADER_GUARD_H}
+#define $1
+${2}
+#endif // $1
+endsnippet
+
 snippet todo
 // TODO: ${1:description}
 endsnippet
