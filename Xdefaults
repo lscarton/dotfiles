@@ -9,7 +9,7 @@ URxvt.saveLines: 20000
 URxvt.intensityStyles:	false
 
 URxvt*depth: 32
-URxvt.background:   [90]nord0
+URxvt.background:   [95]nord0
 
 URxvt.font: 		xft:monospace:size=16
 URxvt.scrollBar:	false
