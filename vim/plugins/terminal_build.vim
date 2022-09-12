@@ -1,4 +1,4 @@
-nnoremap <leader>TT :set termwinsize&<CR>:terminal<CR>
+nnoremap <leader>TT :terminal<CR>
 nnoremap <leader>Tb :terminal bash -x .editor/build_cmd<CR>
 nnoremap <leader>Tt :terminal bash -x .editor/test_cmd<CR>
 
