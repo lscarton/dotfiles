@@ -108,6 +108,9 @@ set noswapfile
 " Eliminate delay between INSERT and ESCAPE
 set timeoutlen=1000 ttimeoutlen=0
 
+" show pressed normal mode commands
+set showcmd
+
 
 
 " =============================================================================
