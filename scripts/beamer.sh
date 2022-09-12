@@ -25,7 +25,7 @@ if [ `xrandr | grep $EXTERNAL_OUTPUT | grep -c ' connected '` -eq 1 ]; then
             notify-send "Screen Configuration" "CLONE"
             ;;
         dual)
-            xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --above $INTERNAL_OUTPUT --primary
+            xrandr --output $INTERNAL_OUTPUT --auto --primary --output $EXTERNAL_OUTPUT --auto --above $INTERNAL_OUTPUT
             notify-send "Screen Configuration" "DUAL"
             ;;
     esac
