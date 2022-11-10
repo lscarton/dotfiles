@@ -29,6 +29,16 @@ export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 # use the previously chose catkin workspace
 source $(cat ~/.config/catkin_workspace/chosen_catkin_workspace)
 
+function _knte()
+{
+    local -a args arg
+    args="$(ls /home/dharmin/locomotec/workspace/src/navigation/kelo_navigation/config)"
+    arg=("${(f)args}")
+    _describe 'command' arg
+}
+compdef _knte knte
+compdef _knte knted
+
 # ranger file browser related settings
 export RANGER_LOAD_DEFAULT_RC=FALSE
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
