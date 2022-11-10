@@ -61,7 +61,7 @@ set nofoldenable
 set number
 
 " Show relative line numbers
-set relativenumber
+" set relativenumber
 
 " Set tabs width to 4, it is still \t
 set tabstop=4
@@ -166,6 +166,8 @@ vnoremap // y/<C-R>"<CR>
 " Y behave like other uppercase letters
 nnoremap Y y$
 
+" remove search highlight
+nnoremap <leader>n :noh<CR>
 
 " =============================================================================
 " Plugins
