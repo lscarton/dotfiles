@@ -96,7 +96,7 @@ execute `crontab -e`
 Add this at the last line
 
 ```
-*/1 * * * * /bin/bash /home/USER/dotfiles/scripts/change_wallpaper.sh >/tmp/wallpaper_cronjob.log 2>&1
+*/5 * * * * /bin/bash /home/dharmin/dotfiles/scripts/change_wallpaper.sh cronjob >/tmp/wallpaper_cronjob.log 2>&1
 ```
 
 ### Additional software
