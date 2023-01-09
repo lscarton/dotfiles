@@ -180,6 +180,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+colorscheme onedark
+
 " source all plugins
 call plug#begin(data_dir . '/plugged')
 source ~/.vim/plugins/ultisnips.vim
@@ -191,6 +193,7 @@ source ~/.vim/plugins/vim-cpp-enhanced-highlight.vim
 source ~/.vim/plugins/fzf.vim
 source ~/.vim/plugins/lightline.vim
 source ~/.vim/plugins/vim-hardtime.vim
+source ~/.vim/plugins/quick-scope.vim
 source ~/.vim/plugins/vimtex.vim
 source ~/.vim/plugins/DoxygenToolkit.vim
 source ~/.vim/plugins/vim-markdown.vim
@@ -207,8 +210,6 @@ source ~/.vim/plugins/terminal_build.vim
 " =============================================================================
 " Color scheme
 " =============================================================================
-
-colorscheme onedark
 " set background=dark
 " transparent background
 hi Normal guibg=NONE ctermbg=NONE
