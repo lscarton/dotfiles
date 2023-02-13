@@ -157,7 +157,7 @@ bindsym $mod+Shift+Escape exec --no-startup-id bash ~/dotfiles/scripts/shutdown.
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-    
+
     # Pressing left will shrink the window’s width.
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
@@ -166,13 +166,13 @@ mode "resize" {
     bindsym j resize grow height 1 px or 1 ppt
     bindsym k resize shrink height 1 px or 1 ppt
     bindsym l resize grow width 1 px or 1 ppt
-    
+
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 1 px or 1 ppt
     bindsym Down resize grow height 1 px or 1 ppt
     bindsym Up resize shrink height 1 px or 1 ppt
     bindsym Right resize grow width 1 px or 1 ppt
-    
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -209,7 +209,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # switch to beamer workspace (for presentations)
-bindsym $mod+p exec --no-startup-id bash ~/dotfiles/scripts/beamer.sh 
+bindsym $mod+p exec --no-startup-id bash ~/dotfiles/scripts/beamer.sh
 
 # Screen shot
 bindsym --release Print exec --no-startup-id bash ~/dotfiles/scripts/screenshot.sh
@@ -304,7 +304,7 @@ assign [class="Slack"] 9
 
 assign [class="Element"] 9
 
-assign [class="Thunderbird"] 9
+# assign [class="Thunderbird"] 9
 
 assign [class="Skype"] 9
 
@@ -325,49 +325,52 @@ assign [class="gazebo"] 3
 
 # wifi controller on startup
 exec nm-applet
- 
+
 # open spotify client
 exec --no-startup-id spotify
- 
+
 # enable tapping as click
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Tapping Enabled" 1
 # enable natural scrolling (like on a phone)
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Natural Scrolling Enabled" 1
 # enable middle mouse click (three finger tap)
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Middle Emulation Enabled" 1
- 
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Middle Emulation Enabled" 1
+
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
- 
-# to locate the access point(AP) name. 
-# nmcli dev wifi 
+
+# to locate the access point(AP) name.
+# nmcli dev wifi
 # nmcli device wifi connect APname password
- 
+
 # to solve screen tear problem
 exec --no-startup-id compton --config ~/dotfiles/compton.conf
-# 
+#
 # # battery notifiction
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 
 # start i3 alternating layout
 exec_always --no-startup-id ~/.i3-alternating-layout/alternating_layouts.py
-  
+
 # turn touchpad on
 #synclient TouchpadOff=0
 
 # map capslock key to escape key
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-# 
+#
 ## All messaging apps on workstation 9
 # open slack
 # exec --no-startup-id slack
-# start whatsweb 
-exec --no-startup-id brave-browser-beta --new_window web.whatsapp.com
+# start whatsweb
+# exec --no-startup-id brave-browser-beta --new_window web.whatsapp.com
+exec --no-startup-id brave-browser-beta --new_window mail.google.com
 # open elements
-exec --no-startup-id element-desktop
+# exec --no-startup-id element-desktop
 # open mail client
-exec --no-startup-id thunderbird
- 
+# exec --no-startup-id thunderbird
+# open skype
+exec --no-startup-id skype
+
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
 
 # exec --no-startup-id brave-browser-beta --new-window open.spotify.com
