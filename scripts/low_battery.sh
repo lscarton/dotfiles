@@ -8,7 +8,7 @@ while true; do
         break
     done
     acpi_output="$(acpi -b)"
-    if [ $percentage -lt 30 ]; then
+    if [ $percentage -lt 20 ]; then
         if [[ $acpi_output == *"Discharging"* ]]; then
             notify-send -i battery-low -u critical "LOW BATTERY" "$percentage"
         fi
