@@ -17,6 +17,6 @@ set noshowmode
        \              [ 'filetype' ] ]
        \ },
        \ 'component_function': {
-       \   'gitbranch': 'fugitive#head'
+       \   'gitbranch': 'FugitiveHead'
        \ },
        \ }
