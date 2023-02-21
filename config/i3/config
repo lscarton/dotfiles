@@ -350,7 +350,7 @@ exec --no-startup-id compton --config ~/dotfiles/compton.conf
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 
 # start i3 alternating layout
-exec_always --no-startup-id ~/.i3-alternating-layout/alternating_layouts.py
+# exec_always --no-startup-id ~/.i3-alternating-layout/alternating_layouts.py
 
 # turn touchpad on
 #synclient TouchpadOff=0
