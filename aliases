@@ -56,6 +56,9 @@ alias alarm="~/dotfiles/scripts/alarm.sh"
 # tmux alias
 alias tmisc='tmux new -A -s misc'
 
+# alias for choosing keyboard layout
+alias change_keyboard='~/dotfiles/scripts/change_keyboard.sh'
+
 alias lofi='cvlc --loop ~/Music/lofi_hiphop.mp3'
 
 alias cabin='roslaunch cabin_nav cabin_navigator.launch'
