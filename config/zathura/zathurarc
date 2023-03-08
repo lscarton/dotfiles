@@ -9,8 +9,8 @@ set selection-clipboard clipboard
 # map i to invert color
 map [normal] i recolor
 map [fullscreen] i recolor
-set recolor-darkcolor "#d9c8b4"
-set recolor-lightcolor "#0b0e11"
+set recolor-darkcolor "#dddddd"
+set recolor-lightcolor "#222222"
 
 # unmap Ctrl+r to invert color
 unmap [normal] <C-r> 
@@ -30,3 +30,4 @@ map [fullscreen] <Left> navigate previous
 map [normal] <Space> toggle_statusbar
 map [fullscreen] <Space> toggle_statusbar
 
+set sandbox none
