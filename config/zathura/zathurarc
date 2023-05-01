@@ -30,3 +30,4 @@ map [fullscreen] <Left> navigate previous
 map [normal] <Space> toggle_statusbar
 map [fullscreen] <Space> toggle_statusbar
 
+set sandbox none

@@ -312,6 +312,7 @@ assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
 
 for_window [title="WhatsApp - Brave"] move to workspace 9
+for_window [title="Gmail - Brave"] move to workspace 9
 
 # for_window [title="Spotify – Web Player - Brave"] move to workspace 10
 
@@ -330,11 +331,12 @@ exec nm-applet
 exec --no-startup-id spotify
 
 # enable tapping as click
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Tapping Enabled" 1
 # enable natural scrolling (like on a phone)
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Natural Scrolling Enabled" 1
 # enable middle mouse click (three finger tap)
  exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Middle Emulation Enabled" 1
+# exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Middle Emulation Enabled" 1 (precision)
 
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
@@ -349,9 +351,6 @@ exec --no-startup-id compton --config ~/dotfiles/compton.conf
 # # battery notifiction
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 
-# start i3 alternating layout
-exec_always --no-startup-id ~/.i3-alternating-layout/alternating_layouts.py
-
 # turn touchpad on
 #synclient TouchpadOff=0
 
@@ -363,10 +362,13 @@ exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 # exec --no-startup-id slack
 # start whatsweb
 exec --no-startup-id brave-browser-beta --new_window web.whatsapp.com
+exec --no-startup-id brave-browser-beta --new_window mail.google.com
 # open elements
-exec --no-startup-id element-desktop
+# exec --no-startup-id element-desktop
 # open mail client
 exec --no-startup-id thunderbird
+# open skype
+exec --no-startup-id skype
 
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
 
