@@ -312,6 +312,7 @@ assign [class="Spotify"] 10 # this doesn;t work because i3 issue #2060
 for_window [class="Spotify"] move to workspace 10
 
 for_window [title="WhatsApp - Brave"] move to workspace 9
+for_window [title="Gmail - Brave"] move to workspace 9
 
 # for_window [title="Spotify – Web Player - Brave"] move to workspace 10
 
