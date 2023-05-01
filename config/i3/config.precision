@@ -335,8 +335,7 @@ exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Tapping Enabled"
 # enable natural scrolling (like on a phone)
 exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Natural Scrolling Enabled" 1
 # enable middle mouse click (three finger tap)
- exec xinput set-prop "MSFT0001:01 04F3:3140 Touchpad" "libinput Middle Emulation Enabled" 1
-# exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Middle Emulation Enabled" 1 (precision)
+exec xinput set-prop "VEN_06CB:00 06CB:CE65 Touchpad" "libinput Middle Emulation Enabled" 1
 
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
@@ -358,21 +357,8 @@ exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 #
 ## All messaging apps on workstation 9
-# open slack
-# exec --no-startup-id slack
-# start whatsweb
-exec --no-startup-id brave-browser-beta --new_window web.whatsapp.com
 exec --no-startup-id brave-browser-beta --new_window mail.google.com
-# open elements
-# exec --no-startup-id element-desktop
-# open mail client
-exec --no-startup-id thunderbird
 # open skype
 exec --no-startup-id skype
 
 exec --no-startup-id i3-msg 'workspace 9; layout tabbed'
-
-# exec --no-startup-id brave-browser-beta --new-window open.spotify.com
-# change keyboard layouts
-# exec "setxkbmap -layout us,de"
-# exec setxkbmap -option 'grp:alt_shift_toggle'
