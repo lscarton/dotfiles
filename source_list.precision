@@ -1,0 +1,45 @@
+#! /bin/sh
+
+# This is a script used for executing scripts, sourcing softwares and other
+# things before starting a terminal. These are not related to bash or zsh and 
+# thus kept in a seperate file.
+
+export TERM=xterm-256color
+
+# set tabstop to 4 spaces
+tabs -4
+
+# fuzzy file finder (fzf) related settings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='find . -not \( -path "*/build/*" -prune \)\
+                                   -not \( -path "*/devel/*" -prune \)\
+                                   -not \( -path "*/logs/*" -prune \)\
+                                   -not \( -path "*/\.*/*" -prune \)'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" 
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+
+# ROS stuff 
+export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
+# roslaunch gbot robot.launch |& tee /home/ropod/.ros/kelo/log/real_robot_launch_\$(date +%F_%T).log
+
+# use the previously chose catkin workspace
+source ~/noetic/devel/setup.zsh
+
+function _cabin()
+{
+    local -a args arg
+    args="$(ls /home/dharmin/noetic/src/navigation/cabin_nav/config)"
+    arg=("${(f)args}")
+    _describe 'command' arg
+}
+compdef _cabin cabin
+compdef _cabin cabind
+compdef _cabin cabingdb
+
+# ranger file browser related settings
+export RANGER_LOAD_DEFAULT_RC=FALSE
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
+export BROWSER=brave-browser-beta
+
+# neofetch on start
+neofetch --source ~/.config/neofetch/batman3

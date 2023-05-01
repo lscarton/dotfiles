@@ -4,3 +4,4 @@ config/ranger/tagged
 vim/plugged
 vim/.netrwhist
 vim/spell
+source_list
