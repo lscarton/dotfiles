@@ -344,7 +344,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/sunset_mountain.jpg
 # nmcli device wifi connect APname password
  
 # to solve screen tear problem
-# exec --no-startup-id compton --config ~/dotfiles/compton.conf
+exec --no-startup-id compton --config ~/dotfiles/compton.conf
 # 
 # # battery notifiction
 exec --no-startup-id bash ~/dotfiles/scripts/low_battery.sh
