@@ -9,11 +9,11 @@ set selection-clipboard clipboard
 # map i to invert color
 map [normal] i recolor
 map [fullscreen] i recolor
-set recolor-darkcolor "#d9c8b4"
-set recolor-lightcolor "#0b0e11"
+set recolor-darkcolor "#dddddd"
+set recolor-lightcolor "#222222"
 
 # unmap Ctrl+r to invert color
-unmap [normal] <C-r> 
+unmap [normal] <C-r>
 unmap [fullscreen] <C-r>
 
 # map W for zoom to width
