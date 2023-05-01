@@ -148,10 +148,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Move between splits
-nmap <leader>k :wincmd k<CR>
-nmap <leader>j :wincmd j<CR>
-nmap <leader>h :wincmd h<CR>
-nmap <leader>l :wincmd l<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>l :wincmd l<CR>
 
 " open directory tree on left side
 nnoremap <leader>e :20Lexplore<CR>
@@ -168,6 +168,8 @@ nnoremap Y y$
 
 " remove search highlight
 nnoremap <leader>n :noh<CR>
+
+
 
 " =============================================================================
 " Plugins
@@ -205,6 +207,7 @@ source ~/.vim/plugins/switch_source_header.vim
 source ~/.vim/plugins/netrw_settings.vim
 source ~/.vim/plugins/tag_managment.vim
 source ~/.vim/plugins/terminal_build.vim
+source ~/.vim/plugins/quick_switch.vim
 
 
 " =============================================================================
