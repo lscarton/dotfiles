@@ -156,10 +156,6 @@ nnoremap <leader>l :wincmd l<CR>
 " open directory tree on left side
 nnoremap <leader>e :20Lexplore<CR>
 
-" find go to next/previous underscore
-nnoremap <leader>f f_
-nnoremap <leader>F F_
-
 " search for selected text
 vnoremap // y/<C-R>"<CR>
 
