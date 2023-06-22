@@ -4,6 +4,6 @@ configuration {
 	font: "mono 16";
 	bw: 0;
 	hide-scrollbar: true;
-	fake-transparency: true;
+	fake-transparency: false;
 	theme: "~/dotfiles/config/rofi/theme.rasi";
 }
