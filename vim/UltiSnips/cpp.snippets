@@ -43,3 +43,14 @@ endsnippet
 snippet coutd
 std::cout << "$1: " << ${1:var_name} << std::endl;
 endsnippet
+
+snippet try
+try
+{
+	${1}
+}
+catch ( ${2:const std::exception& e} )
+{
+	${3}
+}
+endsnippet

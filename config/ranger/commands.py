@@ -56,3 +56,65 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+class fzf_select(Command):
+    """
+    :fzf_select
+    Find a file using fzf.
+    With a prefix argument to select only directories.
+
+    See: https://github.com/junegunn/fzf
+    """
+
+    def execute(self):
+        import subprocess
+        import os
+        from ranger.ext.get_executables import get_executables
+
+        if 'fzf' not in get_executables():
+            self.fm.notify('Could not find fzf in the PATH.', bad=True)
+            return
+
+        env = os.environ.copy()
+
+        fzf = self.fm.execute_command('fzf -i --no-multi --cycle', env=env,
+                                      universal_newlines=True, stdout=subprocess.PIPE)
+        stdout, _ = fzf.communicate()
+        if fzf.returncode == 0:
+            selected = os.path.abspath(stdout.strip())
+            if os.path.isdir(selected):
+                self.fm.cd(selected)
+            else:
+                self.fm.select_file(selected)
+
+class fzf_roscd(Command):
+    """
+    :fzf_roscd
+    roscd into package after fzf
+    """
+
+    def execute(self):
+        import subprocess
+        import os
+        from ranger.ext.get_executables import get_executables
+
+        if 'fzf' not in get_executables():
+            self.fm.notify('Could not find fzf in the PATH.', bad=True)
+            return
+
+        env = os.environ.copy()
+
+        fzf = self.fm.execute_command(
+                'rospack list-names | fzf -i --no-multi --cycle', env=env,
+                universal_newlines=True, stdout=subprocess.PIPE)
+        stdout, _ = fzf.communicate()
+        if fzf.returncode == 0:
+            rospack_path = self.fm.execute_command(
+                    'rospack find ' + stdout.strip(), env=env,
+                    universal_newlines=True, stdout=subprocess.PIPE)
+            stdout, _ = rospack_path.communicate()
+            selected = os.path.abspath(stdout.strip())
+            if os.path.isdir(selected):
+                self.fm.cd(selected)
+            # else:
+            #     self.fm.select_file(selected)
