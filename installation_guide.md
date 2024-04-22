@@ -135,3 +135,24 @@ echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https:/
 sudo apt update
 sudo apt install element-desktop
 ```
+
+### Pass
+
+- Either copy/paste the entire `.gnupg` dir into the new computer (recommended)
+  or export the private key from old machine, copy that into new machine and
+  import it there.
+  - list keys
+    ```
+    gpg --list-secret-keys
+    ```
+  - export one key
+    ```
+    gpg --export-secret-keys -a [KEY_ID] > gpg-secret.asc
+    ```
+  - import key
+    ```
+    gpg --import gpg-secret.asc
+    ```
+
+- install `pass` (`sudo apt install pass`)
+- Clone `password-store` as `.password-store` dir
