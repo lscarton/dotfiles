@@ -143,7 +143,7 @@ sudo apt install element-desktop
   import it there.
   - list keys
     ```
-    gpg --list-secret-keys
+    gpg --list-secret-keys --keyid-format LONG
     ```
   - export one key
     ```
@@ -152,6 +152,13 @@ sudo apt install element-desktop
   - import key
     ```
     gpg --import gpg-secret.asc
+    ```
+  - trust key
+    ```
+    gpg --edit-key [KEY_ID]
+    gpg> trust
+    Your decision? 5
+    gpg> quit
     ```
 
 - install `pass` (`sudo apt install pass`)
