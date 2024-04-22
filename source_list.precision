@@ -23,6 +23,7 @@ export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 # roslaunch gbot robot.launch |& tee /home/ropod/.ros/kelo/log/real_robot_launch_\$(date +%F_%T).log
 
 # use the previously chose catkin workspace
+source /opt/ros/noetic/setup.zsh
 source ~/noetic/devel/setup.zsh
 
 function _cabin()
