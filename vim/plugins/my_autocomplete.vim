@@ -26,6 +26,8 @@ set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 set completeopt=menu,menuone,longest
 
+set omnifunc=syntaxcomplete#Complete
+
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent> <expr> <Tab> SimpleAutoComplete(0)
 inoremap <silent> <expr> <S-Tab> SimpleAutoComplete(1)
