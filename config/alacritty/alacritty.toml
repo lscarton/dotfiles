@@ -8,10 +8,8 @@
 import = []
 
 # Shell program and its arguments
-# Default for Linux/BSD/macOS is $SHELL or user's login shell
-# Default for Windows is "powershell"
 #[shell]
-#program = "/bin/zsh"  # Example for Linux/BSD/macOS
+#program = "/bin/zsh"  # Default $SHELL
 #args = ["-l"]
 
 # Working directory
@@ -30,6 +28,7 @@ ipc_socket = true  # Default: true
 [env]
 # Environment variables
 TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"
 
 ###########
 ## WINDOW #
@@ -110,7 +109,7 @@ italic = { style = "Italic" }  # Inherits family from normal, Default style: Ita
 bold_italic = { style = "Bold Italic" }  # Inherits family from normal, Default style: Bold Italic
 
 # Font size in points
-size = 16  # Default: 11.25
+size = 16.5  # Default: 11.25
 
 # Offset is extra space around each character
 offset = { x = 0, y = 0 }  # Default: x = 0, y = 0
