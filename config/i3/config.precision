@@ -13,7 +13,7 @@ floating_modifier $mod
 
 set $terminal alacritty
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+t exec i3-sensible-terminal
 
 # kill focused window
@@ -226,6 +226,9 @@ bindsym $mod+Shift+p exec --no-startup-id ~/dotfiles/scripts/passmenu
 bindsym $mod+Shift+w exec --no-startup-id bash ~/dotfiles/scripts/wlan_nm.sh
 
 bindsym $mod+i exec --no-startup-id bash ~/dotfiles/scripts/change_keyboard.sh
+
+bindsym $mod+c exec --no-startup-id ~/dotfiles/scripts/center_mouse.sh
+
 
 
 ###########################################
