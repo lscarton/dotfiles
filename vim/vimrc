@@ -195,8 +195,10 @@ source ~/.vim/plugins/quick-scope.vim
 source ~/.vim/plugins/vimtex.vim
 source ~/.vim/plugins/DoxygenToolkit.vim
 source ~/.vim/plugins/vim-markdown.vim
+source ~/.vim/plugins/vim-javascript-syntax.vim
 call plug#end()
 
+packadd! matchit
 
 source ~/.vim/plugins/my_autocomplete.vim
 source ~/.vim/plugins/switch_source_header.vim
