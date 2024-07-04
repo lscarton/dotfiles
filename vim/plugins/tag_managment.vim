@@ -20,7 +20,8 @@ function! GenerateTags()
 endfunction
 
 " nnoremap <leader>tj g<C-]>
-nnoremap <leader>tj :call fzf#vim#tags('^' . expand('<cword>') . ' ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
+" nnoremap <leader>tj :call fzf#vim#tags('^' . expand('<cword>') . ' ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
+nnoremap <leader>tj :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0 +i'})<CR>
 nnoremap <leader>tgd :call fzf#vim#tags('^' . expand('<cword>') . ' .h ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
 nnoremap <leader>tgf :call fzf#vim#tags('^' . expand('<cword>') . ' .cpp ', {'options': '--exact --select-1 --exit-0 +i'})<CR>
 nnoremap <leader>tn :tnext<CR>
